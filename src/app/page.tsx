@@ -1,8 +1,14 @@
 import HeroSection from "@/components/homepage/HeroSection";
 import SavingsCalculator from "@/components/calculator/SavingsCalculator";
 import TrustBadges from "@/components/homepage/TrustBadges";
+import SavingsStats from "@/components/homepage/SavingsStats";
 import HowItWorks from "@/components/homepage/HowItWorks";
+import ComparisonTable from "@/components/homepage/ComparisonTable";
+import BankRatesGrid from "@/components/homepage/BankRatesGrid";
 import WhyChange from "@/components/homepage/WhyChange";
+import ProfileCards from "@/components/homepage/ProfileCards";
+import GuaranteesExplainer from "@/components/homepage/GuaranteesExplainer";
+import InsurerReviewsGrid from "@/components/homepage/InsurerReviewsGrid";
 import FAQ from "@/components/homepage/FAQ";
 import JsonLd from "@/components/seo/JsonLd";
 
@@ -37,6 +43,36 @@ const FAQ_ITEMS = [
     answer:
       "Notre simulateur compare le coût de votre assurance bancaire actuelle avec les taux moyens pratiqués par les assureurs en délégation, en tenant compte de votre âge, de votre profil et des caractéristiques de votre prêt.",
   },
+  {
+    question: "Quel est le prix moyen d'une assurance emprunteur ?",
+    answer:
+      "Le coût moyen d'une assurance emprunteur représente entre 0,10% et 0,50% du capital emprunté par an, selon votre âge, votre état de santé et le type de contrat. Pour un prêt de 200 000 €, cela représente entre 200 € et 1 000 € par an. Les contrats en délégation sont généralement 2 à 3 fois moins chers que les contrats groupe bancaires.",
+  },
+  {
+    question: "Qu'est-ce que la délégation d'assurance emprunteur ?",
+    answer:
+      "La délégation d'assurance consiste à choisir un assureur externe plutôt que le contrat groupe de votre banque. Depuis la loi Lagarde (2010), votre banque ne peut pas refuser une délégation si les garanties sont équivalentes. C'est le moyen le plus efficace de réduire le coût de votre assurance emprunteur.",
+  },
+  {
+    question: "Quels sont les meilleurs assureurs emprunteur en 2026 ?",
+    answer:
+      "Les assureurs en délégation les plus compétitifs en 2026 sont April, Generali, Swiss Life, Cardif Liberté et Suravenir. Le choix dépend de votre profil : âge, état de santé, profession et montant du prêt. Notre simulateur compare les offres adaptées à votre situation.",
+  },
+  {
+    question: "L'assurance emprunteur est-elle obligatoire ?",
+    answer:
+      "Légalement, l'assurance emprunteur n'est pas obligatoire. En pratique, aucune banque ne vous accorde un prêt immobilier sans assurance. Elle est donc obligatoire de fait pour obtenir votre financement. Les garanties décès et PTIA sont systématiquement exigées.",
+  },
+  {
+    question: "Comment fonctionne le questionnaire médical ?",
+    answer:
+      "Le questionnaire médical permet à l'assureur d'évaluer votre état de santé et d'ajuster ses tarifs. Depuis la loi Lemoine, il est supprimé pour les prêts dont la part assurée est inférieure à 200 000 € et dont le terme intervient avant le 60ème anniversaire de l'emprunteur.",
+  },
+  {
+    question: "Qu'est-ce que la convention AERAS ?",
+    answer:
+      "La convention AERAS (S'Assurer et Emprunter avec un Risque Aggravé de Santé) facilite l'accès à l'assurance emprunteur pour les personnes ayant ou ayant eu un problème de santé grave. Elle prévoit un droit à l'oubli pour certains cancers et maladies chroniques, et plafonne les surprimes applicables.",
+  },
 ];
 
 const webAppSchema = {
@@ -68,7 +104,7 @@ export default function HomePage() {
       <JsonLd data={webAppSchema} />
       <JsonLd data={faqSchema} />
 
-      {/* Section 1 — Hero + Calculateur */}
+      {/* 1 — Hero + Calculateur */}
       <HeroSection />
       <section className="bg-gray-50 pb-8 md:pb-12 -mt-2">
         <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
@@ -76,19 +112,37 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Section 2 — Trust Badges */}
+      {/* 2 — Trust Badges */}
       <TrustBadges />
 
-      {/* Section 3 — Comment ça marche */}
+      {/* 3 — Économies moyennes constatées */}
+      <SavingsStats />
+
+      {/* 4 — Comment ça marche */}
       <HowItWorks />
 
-      {/* Section 4 — Pourquoi changer */}
+      {/* 5 — Comparatif groupe vs délégation */}
+      <ComparisonTable />
+
+      {/* 6 — Taux par banque */}
+      <BankRatesGrid />
+
+      {/* 7 — Pourquoi changer (loi Lemoine) */}
       <WhyChange />
 
-      {/* Section 5 — FAQ */}
+      {/* 8 — Par profil */}
+      <ProfileCards />
+
+      {/* 9 — Garanties expliquées */}
+      <GuaranteesExplainer />
+
+      {/* 10 — Avis assureurs */}
+      <InsurerReviewsGrid />
+
+      {/* 11 — FAQ enrichie */}
       <FAQ />
 
-      {/* Section 6 — CTA final */}
+      {/* 12 — CTA final */}
       <section className="bg-primary-900 py-16 md:py-20">
         <div className="max-w-3xl mx-auto px-4 md:px-6 lg:px-8 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
