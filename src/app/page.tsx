@@ -1,65 +1,111 @@
-import Image from "next/image";
+import HeroSection from "@/components/homepage/HeroSection";
+import SavingsCalculator from "@/components/calculator/SavingsCalculator";
+import TrustBadges from "@/components/homepage/TrustBadges";
+import HowItWorks from "@/components/homepage/HowItWorks";
+import WhyChange from "@/components/homepage/WhyChange";
+import FAQ from "@/components/homepage/FAQ";
+import JsonLd from "@/components/seo/JsonLd";
 
-export default function Home() {
+const FAQ_ITEMS = [
+  {
+    question: "Qu'est-ce que la loi Lemoine ?",
+    answer:
+      "La loi Lemoine, entrée en vigueur le 1er juin 2022, permet à tout emprunteur de résilier et de changer son assurance de prêt immobilier à tout moment, sans frais et sans attendre de date anniversaire. Elle supprime également le questionnaire de santé pour les prêts de moins de 200 000 € dont le terme intervient avant les 60 ans de l'emprunteur.",
+  },
+  {
+    question: "Puis-je changer d'assurance emprunteur à tout moment ?",
+    answer:
+      "Oui, depuis la loi Lemoine, vous pouvez changer d'assurance emprunteur à tout moment, que votre prêt soit récent ou ancien. Il n'y a plus de contrainte de date anniversaire.",
+  },
+  {
+    question: "Ma banque peut-elle refuser mon changement d'assurance ?",
+    answer:
+      "Votre banque ne peut refuser votre changement d'assurance que si le nouveau contrat ne présente pas un niveau de garanties équivalent à celui du contrat initial. Elle dispose de 10 jours ouvrés pour vous notifier sa décision et doit motiver tout refus de manière précise.",
+  },
+  {
+    question: "Combien coûte le changement d'assurance emprunteur ?",
+    answer:
+      "Le changement d'assurance emprunteur est totalement gratuit. La loi interdit à votre banque de facturer des frais de résiliation ou de modification.",
+  },
+  {
+    question: "Quelles sont les garanties minimales obligatoires ?",
+    answer:
+      "Les garanties minimales exigées dépendent de votre banque et de votre profil. En général, les garanties décès et PTIA sont systématiquement requises. Les garanties ITT et IPP/IPT sont souvent demandées pour les résidences principales.",
+  },
+  {
+    question: "Comment fonctionne le simulateur CalculEmprunteur.fr ?",
+    answer:
+      "Notre simulateur compare le coût de votre assurance bancaire actuelle avec les taux moyens pratiqués par les assureurs en délégation, en tenant compte de votre âge, de votre profil et des caractéristiques de votre prêt.",
+  },
+];
+
+const webAppSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "CalculEmprunteur.fr",
+  description: "Calculateur gratuit d'économies en assurance emprunteur",
+  url: "https://calculemprunteur.fr",
+  applicationCategory: "FinanceApplication",
+  operatingSystem: "Web",
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_ITEMS.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <JsonLd data={webAppSchema} />
+      <JsonLd data={faqSchema} />
+
+      {/* Section 1 — Hero + Calculateur */}
+      <HeroSection />
+      <section className="bg-gray-50 pb-8 md:pb-12 -mt-2">
+        <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+          <SavingsCalculator />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+      </section>
+
+      {/* Section 2 — Trust Badges */}
+      <TrustBadges />
+
+      {/* Section 3 — Comment ça marche */}
+      <HowItWorks />
+
+      {/* Section 4 — Pourquoi changer */}
+      <WhyChange />
+
+      {/* Section 5 — FAQ */}
+      <FAQ />
+
+      {/* Section 6 — CTA final */}
+      <section className="bg-primary-900 py-16 md:py-20">
+        <div className="max-w-3xl mx-auto px-4 md:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
+            Prêt à économiser sur votre assurance emprunteur ?
+          </h2>
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#simulateur"
+            className="
+              inline-block bg-accent-600 hover:bg-accent-500 text-white
+              font-semibold rounded-xl px-8 py-4 text-base md:text-lg
+              shadow-md hover:shadow-lg transition-all duration-200
+            "
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+            Lancer la simulation →
           </a>
         </div>
-      </main>
-    </div>
+      </section>
+    </>
   );
 }
