@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 const NAV_LINKS = [
   { label: "Simulateur", href: "#simulateur" },
@@ -17,13 +18,15 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 md:h-16">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-0">
-            <span className="text-lg md:text-xl font-bold text-white">
-              CalculEmprunteur
-            </span>
-            <span className="text-lg md:text-xl font-bold text-accent-500">
-              .fr
-            </span>
+          <a href="/" className="flex items-center">
+            <Image
+              src="/logo.png"
+              alt="CalculEmprunteur.fr"
+              width={200}
+              height={40}
+              className="h-8 md:h-9 w-auto brightness-0 invert"
+              priority
+            />
           </a>
 
           {/* Desktop navigation */}

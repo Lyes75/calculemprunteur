@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const COL2_LINKS = [
   { label: "Simulateur", href: "#simulateur" },
   { label: "Loi Lemoine", href: "#loi-lemoine" },
@@ -19,13 +21,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {/* Col 1 — Logo + description */}
           <div>
-            <a href="/" className="inline-flex items-center gap-0 mb-4">
-              <span className="text-lg font-bold text-white">
-                CalculEmprunteur
-              </span>
-              <span className="text-lg font-bold text-accent-500">
-                .fr
-              </span>
+            <a href="/" className="inline-block mb-4">
+              <Image
+                src="/logo.png"
+                alt="CalculEmprunteur.fr"
+                width={180}
+                height={36}
+                className="h-8 w-auto brightness-0 invert"
+              />
             </a>
             <p className="text-sm leading-relaxed">
               Calculateur indépendant d&apos;économies en assurance emprunteur.
