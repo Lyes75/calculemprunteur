@@ -21,14 +21,18 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {/* Col 1 — Logo + description */}
           <div>
-            <a href="/" className="inline-block mb-4">
+            <a href="/" className="inline-flex items-center gap-2 mb-4">
               <Image
-                src="/logo.png"
-                alt="CalculEmprunteur.fr"
-                width={180}
+                src="/icon-logo.png"
+                alt=""
+                width={36}
                 height={36}
-                className="h-10 w-auto brightness-0 invert"
+                className="h-8 w-auto brightness-0 invert"
               />
+              <span className="text-lg font-bold tracking-tight">
+                <span className="text-white">CalculEmprunteur</span>
+                <span className="text-accent-500">.fr</span>
+              </span>
             </a>
             <p className="text-sm leading-relaxed">
               Calculateur indépendant d&apos;économies en assurance emprunteur.

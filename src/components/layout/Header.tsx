@@ -18,15 +18,19 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between h-18 md:h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center">
+          <a href="/" className="flex items-center gap-2">
             <Image
-              src="/logo.png"
-              alt="CalculEmprunteur.fr"
-              width={320}
-              height={107}
-              className="h-12 md:h-14 w-auto brightness-0 invert"
+              src="/icon-logo.png"
+              alt=""
+              width={40}
+              height={40}
+              className="h-8 md:h-10 w-auto brightness-0 invert"
               priority
             />
+            <span className="text-xl md:text-2xl font-bold tracking-tight">
+              <span className="text-white">CalculEmprunteur</span>
+              <span className="text-accent-500">.fr</span>
+            </span>
           </a>
 
           {/* Desktop navigation */}
