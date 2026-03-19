@@ -16,15 +16,15 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-primary-900/95 backdrop-blur-md border-b border-primary-800 shadow-sm">
       <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-18">
+        <div className="flex items-center justify-between h-18 md:h-20">
           {/* Logo */}
           <a href="/" className="flex items-center">
             <Image
               src="/logo.png"
               alt="CalculEmprunteur.fr"
-              width={240}
-              height={80}
-              className="h-9 md:h-11 w-auto brightness-0 invert"
+              width={320}
+              height={107}
+              className="h-12 md:h-14 w-auto brightness-0 invert"
               priority
             />
           </a>
