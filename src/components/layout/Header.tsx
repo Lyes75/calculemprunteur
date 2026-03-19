@@ -24,7 +24,7 @@ export default function Header() {
               alt="CalculEmprunteur.fr"
               width={200}
               height={40}
-              className="h-8 md:h-9 w-auto brightness-0 invert"
+              className="h-10 md:h-11 w-auto brightness-0 invert"
               priority
             />
           </a>

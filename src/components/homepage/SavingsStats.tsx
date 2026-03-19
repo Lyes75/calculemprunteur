@@ -50,7 +50,7 @@ export default function SavingsStats() {
               <p className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-accent-500 tracking-tight mb-2">
                 {stat.value}
               </p>
-              <p className="text-sm text-primary-200 leading-relaxed">
+              <p className="text-sm text-white/80 leading-relaxed">
                 {stat.label}
               </p>
             </div>
@@ -58,7 +58,7 @@ export default function SavingsStats() {
         </div>
 
         <div className="max-w-3xl mx-auto text-center fade-up">
-          <p className="text-primary-200 text-sm md:text-base leading-relaxed mb-8">
+          <p className="text-white/70 text-sm md:text-base leading-relaxed mb-8">
             Le coût moyen d&apos;une assurance emprunteur bancaire se situe entre
             0,30% et 0,50% du capital emprunté. En passant par une assurance en
             délégation, ce taux descend entre 0,10% et 0,25% selon votre profil.
