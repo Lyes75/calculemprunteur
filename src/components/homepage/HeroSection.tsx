@@ -6,7 +6,7 @@ export default function HeroSection() {
           Combien économisez-vous en changeant d&apos;assurance emprunteur ?
         </h1>
         <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-          Grâce à la loi Lemoine, vous pouvez changer à tout moment. Simulez vos économies en 2 minutes.
+          Simulez vos économies, découvrez les meilleures offres pour votre profil, et générez votre lettre de changement. 100% gratuit, 2 minutes.
         </p>
       </div>
     </section>

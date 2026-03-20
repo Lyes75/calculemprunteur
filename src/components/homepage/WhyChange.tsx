@@ -72,6 +72,9 @@ export default function WhyChange() {
             toutes les démarches administratives. Vous n&apos;avez rien à faire, si ce
             n&apos;est économiser.
           </p>
+          <p>
+            La procédure est plus simple qu&apos;il n&apos;y paraît : il suffit d&apos;envoyer une lettre de résiliation à votre banque avec votre nouveau contrat d&apos;assurance. Votre banque dispose de 10 jours ouvrés pour accepter ou motiver un refus (uniquement si les garanties ne sont pas équivalentes). Sur CalculEmprunteur.fr, cette lettre est générée automatiquement avec les données de votre prêt — il ne vous reste plus qu&apos;à l&apos;envoyer.
+          </p>
         </div>
 
         <div className="mt-8 fade-up">

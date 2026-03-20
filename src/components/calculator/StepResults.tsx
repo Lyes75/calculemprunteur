@@ -140,7 +140,11 @@ export default function StepResults({ result, loanData, profileData, onReset }: 
       {/* Graphique à barres */}
       <BarChart currentCost={result.totalCostCurrent} delegationCost={result.totalCostDelegation} />
 
-      {/* Top 3 recommandations IA */}
+      {/* Top 3 recommandations */}
+      <div className="mt-2 mb-4">
+        <h3 className="text-xl font-bold text-gray-900">Les 3 meilleures offres pour votre profil</h3>
+        <p className="text-sm text-gray-500 mt-1">Sélectionnées automatiquement selon votre âge, votre situation et votre prêt</p>
+      </div>
       <TopRecommendations
         capital={loanData.capital}
         remainingYears={loanData.remainingYears}
@@ -152,7 +156,11 @@ export default function StepResults({ result, loanData, profileData, onReset }: 
         currentTotalCost={result.totalCostCurrent}
       />
 
-      {/* Lettre de résiliation IA */}
+      {/* Lettre de résiliation */}
+      <div className="mt-2 mb-4">
+        <h3 className="text-xl font-bold text-gray-900">Votre lettre de changement prête à envoyer</h3>
+        <p className="text-sm text-gray-500 mt-1">Pré-remplie avec les données de votre prêt, conforme à la loi Lemoine</p>
+      </div>
       <ResignationLetter
         bankName={BANK_DATA[loanData.bankKey]?.name ?? "Autre banque"}
         capital={loanData.capital}

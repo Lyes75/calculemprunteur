@@ -45,6 +45,12 @@ export default function Header() {
                 {link.label}
               </a>
             ))}
+            <a
+              href="#simulateur"
+              className="ml-2 inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-accent-600 hover:bg-accent-500 rounded-lg transition-colors"
+            >
+              Simuler gratuitement
+            </a>
           </nav>
 
           {/* Mobile burger */}

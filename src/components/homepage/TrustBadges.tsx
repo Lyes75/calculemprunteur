@@ -2,10 +2,26 @@ const BADGES = [
   {
     icon: (
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
     label: "100% gratuit",
+  },
+  {
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M16 8v-2a2 2 0 00-2-2h-4a2 2 0 00-2 2v2M5 12h14M8 20h8M12 12v8M9 16h6" />
+      </svg>
+    ),
+    label: "Top 3 assureurs pour votre profil",
+  },
+  {
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+      </svg>
+    ),
+    label: "Lettre de changement générée",
   },
   {
     icon: (
@@ -15,22 +31,6 @@ const BADGES = [
     ),
     label: "Sans engagement",
   },
-  {
-    icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-      </svg>
-    ),
-    label: "Données sécurisées",
-  },
-  {
-    icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    ),
-    label: "Résultat immédiat",
-  },
 ];
 
 export default function TrustBadges() {
@@ -39,9 +39,9 @@ export default function TrustBadges() {
       <div className="max-w-[760px] mx-auto px-4 md:px-6">
         <div className="flex flex-wrap justify-center gap-6 md:gap-10">
           {BADGES.map((badge) => (
-            <div key={badge.label} className="flex items-center gap-2 text-gray-500">
-              <span className="text-gray-400">{badge.icon}</span>
-              <span className="text-sm font-medium">{badge.label}</span>
+            <div key={badge.label} className="flex items-center gap-2">
+              <span className="text-primary-800">{badge.icon}</span>
+              <span className="text-sm font-medium text-gray-600">{badge.label}</span>
             </div>
           ))}
         </div>

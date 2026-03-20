@@ -7,6 +7,7 @@ const STATS = [
   { value: "0,10% à 0,15%", label: "Taux moyen en délégation (25-35 ans, non-fumeur)" },
   { value: "45%", label: "D'économie en moyenne vs l'assurance groupe de votre banque" },
   { value: "2 minutes", label: "Pour simuler votre économie" },
+  { value: "3", label: "Offres personnalisées générées par simulation" },
 ];
 
 export default function SavingsStats() {
@@ -44,7 +45,7 @@ export default function SavingsStats() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-10">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 mb-10">
           {STATS.map((stat) => (
             <div key={stat.value} className="text-center fade-up">
               <p className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-accent-500 tracking-tight mb-2">

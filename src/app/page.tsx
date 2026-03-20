@@ -41,7 +41,7 @@ const FAQ_ITEMS = [
   {
     question: "Comment fonctionne le simulateur CalculEmprunteur.fr ?",
     answer:
-      "Notre simulateur compare le coût de votre assurance bancaire actuelle avec les taux moyens pratiqués par les assureurs en délégation, en tenant compte de votre âge, de votre profil et des caractéristiques de votre prêt.",
+      "Notre simulateur calcule vos économies en comparant votre assurance actuelle avec les meilleures offres en délégation du marché. En plus du calcul d'économie, il sélectionne les 3 assureurs les plus adaptés à votre profil — en tenant compte de votre âge, votre état de santé et votre profession — et génère automatiquement votre lettre de changement d'assurance, pré-remplie et conforme à la loi Lemoine. Le service est entièrement gratuit et sans engagement.",
   },
   {
     question: "Quel est le prix moyen d'une assurance emprunteur ?",
@@ -146,7 +146,7 @@ export default function HomePage() {
       <section className="bg-primary-900 py-16 md:py-20">
         <div className="max-w-3xl mx-auto px-4 md:px-6 lg:px-8 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
-            Prêt à économiser sur votre assurance emprunteur ?
+            Simulez, comparez, et recevez votre lettre de changement en 2 minutes
           </h2>
           <a
             href="#simulateur"
