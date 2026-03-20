@@ -8,15 +8,24 @@ import StepLoan from "./StepLoan";
 import StepProfile from "./StepProfile";
 import StepResults from "./StepResults";
 import { getSessionId, getDeviceType } from "@/lib/session";
+import { BANK_DATA } from "./constants";
 
-export default function SavingsCalculator() {
+interface SavingsCalculatorProps {
+  preselectedBank?: string;
+  preselectedRate?: number;
+}
+
+export default function SavingsCalculator({
+  preselectedBank,
+  preselectedRate,
+}: SavingsCalculatorProps = {}) {
   const [currentStep, setCurrentStep] = useState(1);
   const [direction, setDirection] = useState<"forward" | "backward">("forward");
   const [loanData, setLoanData] = useState<LoanData>({
     capital: 200000,
     remainingYears: 15,
-    bankKey: "",
-    currentRate: 0,
+    bankKey: preselectedBank || "",
+    currentRate: preselectedRate ? preselectedRate * 100 : 0,
   });
   const [profileData, setProfileData] = useState<ProfileData>({
     ageRange: "",
@@ -104,6 +113,14 @@ export default function SavingsCalculator() {
   return (
     <div ref={containerRef} id="simulateur" className="scroll-mt-20">
       <div className="bg-white rounded-2xl shadow-lg border border-gray-200 border-t-[3px] border-t-accent-600 p-6 md:p-8 lg:p-10 max-w-[760px] mx-auto">
+        {preselectedBank && BANK_DATA[preselectedBank] && (
+          <div className="mb-4 inline-flex items-center gap-2 text-sm text-primary-800 bg-primary-100 rounded-full px-3 py-1">
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Simulation pré-remplie pour {BANK_DATA[preselectedBank].name}
+          </div>
+        )}
         <ProgressBar currentStep={currentStep} onStepClick={handleStepClick} />
 
         <div key={currentStep} className={animationClass}>
