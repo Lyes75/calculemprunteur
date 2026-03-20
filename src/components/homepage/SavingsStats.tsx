@@ -45,13 +45,15 @@ export default function SavingsStats() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 mb-10 items-start">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 mb-10">
           {STATS.map((stat) => (
-            <div key={stat.value} className="text-center fade-up flex flex-col items-center">
-              <p className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-accent-500 tracking-tight mb-2 min-h-[2.5rem] md:min-h-[3rem] flex items-end justify-center">
-                {stat.value}
-              </p>
-              <p className="text-sm text-white/80 leading-relaxed">
+            <div key={stat.value} className="text-center fade-up">
+              <div className="h-[4.5rem] md:h-[5.5rem] flex items-end justify-center">
+                <p className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-accent-500 tracking-tight leading-tight">
+                  {stat.value}
+                </p>
+              </div>
+              <p className="text-sm text-white/80 leading-relaxed mt-2">
                 {stat.label}
               </p>
             </div>
