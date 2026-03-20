@@ -41,8 +41,6 @@ export async function POST(req: NextRequest) {
     const { error } = await sb.from('admin_sessions').insert({
       token,
       expires_at: expiresAt.toISOString(),
-      ip_address: ip,
-      user_agent: userAgent,
     });
 
     if (error) {
