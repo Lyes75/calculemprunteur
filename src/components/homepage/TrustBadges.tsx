@@ -35,13 +35,16 @@ const BADGES = [
 
 export default function TrustBadges() {
   return (
-    <section className="py-8 md:py-10">
-      <div className="max-w-[760px] mx-auto px-4 md:px-6">
-        <div className="flex flex-wrap justify-center gap-6 md:gap-10">
-          {BADGES.map((badge) => (
-            <div key={badge.label} className="flex items-center gap-2">
-              <span className="text-primary-800">{badge.icon}</span>
-              <span className="text-sm font-medium text-gray-600">{badge.label}</span>
+    <section className="py-8 md:py-10 overflow-x-auto">
+      <div className="max-w-5xl mx-auto px-4 md:px-6">
+        <div className="flex items-center justify-center gap-4 md:gap-8 min-w-max mx-auto">
+          {BADGES.map((badge, i) => (
+            <div key={badge.label} className="flex items-center gap-0">
+              {i > 0 && (
+                <span className="text-gray-300 mr-4 hidden sm:block">|</span>
+              )}
+              <span className="text-primary-800 shrink-0">{badge.icon}</span>
+              <span className="text-sm font-medium text-gray-600 whitespace-nowrap ml-2">{badge.label}</span>
             </div>
           ))}
         </div>

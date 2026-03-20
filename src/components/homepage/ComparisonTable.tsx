@@ -117,7 +117,15 @@ export default function ComparisonTable() {
           L&apos;équivalence de garanties est le seul critère que votre banque
           peut exiger. Si les garanties de votre nouvelle assurance couvrent au
           minimum les mêmes risques (décès, PTIA, ITT, IPT), votre banque ne
-          peut pas refuser le changement. C&apos;est la loi.
+          peut pas refuser le changement.{" "}
+          <a
+            href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000045385498"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent-600 hover:text-accent-500 font-medium transition-colors"
+          >
+            C&apos;est la loi →
+          </a>
         </p>
 
         <div className="text-center fade-up">
