@@ -7,7 +7,24 @@
 -- 3. Click Run
 -- ============================================================
 
--- Drop existing tables if they exist (clean install)
+-- Drop everything (clean install)
+DROP TRIGGER IF EXISTS leads_updated_at ON leads;
+DROP FUNCTION IF EXISTS update_updated_at();
+DROP INDEX IF EXISTS idx_leads_created_at;
+DROP INDEX IF EXISTS idx_leads_email;
+DROP INDEX IF EXISTS idx_leads_status;
+DROP INDEX IF EXISTS idx_leads_banque;
+DROP INDEX IF EXISTS idx_leads_source_form;
+DROP INDEX IF EXISTS idx_leads_session_id;
+DROP INDEX IF EXISTS idx_clicks_created_at;
+DROP INDEX IF EXISTS idx_clicks_session_id;
+DROP INDEX IF EXISTS idx_clicks_lead_id;
+DROP INDEX IF EXISTS idx_clicks_insurer;
+DROP INDEX IF EXISTS idx_simulations_created_at;
+DROP INDEX IF EXISTS idx_simulations_session_id;
+DROP INDEX IF EXISTS idx_simulations_converted;
+DROP INDEX IF EXISTS idx_email_events_lead_id;
+DROP INDEX IF EXISTS idx_admin_sessions_token;
 DROP TABLE IF EXISTS email_events CASCADE;
 DROP TABLE IF EXISTS affiliate_clicks CASCADE;
 DROP TABLE IF EXISTS simulations CASCADE;
