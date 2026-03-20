@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { label: "Comment ça marche", href: "#comment-ca-marche" },
   { label: "Loi Lemoine", href: "#loi-lemoine" },
   { label: "FAQ", href: "#faq" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Header() {
