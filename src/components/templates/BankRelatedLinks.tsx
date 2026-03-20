@@ -39,7 +39,7 @@ export default function BankRelatedLinks({ bank }: BankRelatedLinksProps) {
             {relatedBanks.map((relatedBank) => (
               <Link
                 key={relatedBank.slug}
-                href={`/changer-assurance-emprunteur-${relatedBank.slug}`}
+                href={`/assurance-emprunteur-${relatedBank.slug}`}
                 className="bg-white rounded-xl border border-gray-200 p-4 hover:shadow-md hover:border-primary-200 transition-all duration-200"
               >
                 <div className="flex items-center gap-3 mb-3">

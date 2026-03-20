@@ -89,7 +89,7 @@ export default function BankRatesGrid() {
                 ~{computeSavings(bank.rate)} € d&apos;économie potentielle
               </p>
               <a
-                href={`/changer-assurance-emprunteur-${bank.slug}`}
+                href={`/assurance-emprunteur-${bank.slug}`}
                 className="text-sm text-accent-600 hover:text-accent-500 font-medium transition-colors"
               >
                 Voir le détail →
