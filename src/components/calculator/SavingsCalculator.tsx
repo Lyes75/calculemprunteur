@@ -7,6 +7,7 @@ import ProgressBar from "./ProgressBar";
 import StepLoan from "./StepLoan";
 import StepProfile from "./StepProfile";
 import StepResults from "./StepResults";
+import { getSessionId, getDeviceType } from "@/lib/session";
 
 export default function SavingsCalculator() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -51,6 +52,27 @@ export default function SavingsCalculator() {
       riskyJob: data.riskyJob,
     });
     setResult(calcResult);
+
+    // Track simulation (fire-and-forget)
+    fetch('/api/simulations', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        session_id: getSessionId(),
+        capital: loanData.capital,
+        duree_restante: loanData.remainingYears,
+        banque_slug: loanData.bankKey,
+        taux_actuel: loanData.currentRate,
+        tranche_age: data.ageRange,
+        fumeur: data.smoker,
+        profession_risque: data.riskyJob,
+        economie_estimee: calcResult.savings,
+        taux_delegation_estime: calcResult.delegationRate,
+        source_page: '/',
+        device_type: getDeviceType(),
+      }),
+    }).catch(() => {});
+
     goToStep(3);
   }
 

@@ -8,6 +8,7 @@ import BarChart from "./BarChart";
 import TopRecommendations from "./TopRecommendations";
 import ResignationLetter from "./ResignationLetter";
 import { BANK_DATA } from "./constants";
+import { getSessionId, getDeviceType } from "@/lib/session";
 
 interface StepResultsProps {
   result: CalculatorResult;
@@ -24,6 +25,7 @@ export default function StepResults({ result, loanData, profileData, onReset }: 
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [consentMarketing, setConsentMarketing] = useState(false);
 
   const isLowSavings = result.savings < 500;
 
@@ -49,29 +51,43 @@ export default function StepResults({ result, loanData, profileData, onReset }: 
     return Object.keys(newErrors).length === 0;
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!validateForm()) return;
 
-    const fullLead = {
-      ...leadData,
-      capital: loanData.capital,
-      remainingYears: loanData.remainingYears,
-      bankKey: loanData.bankKey,
-      currentRate: loanData.currentRate,
-      ageRange: profileData.ageRange,
-      smoker: profileData.smoker,
-      riskyJob: profileData.riskyJob,
-      estimatedSavings: result.savings,
-      timestamp: new Date().toISOString(),
-    };
+    const bankInfo = BANK_DATA[loanData.bankKey];
 
     try {
-      const existingLeads = JSON.parse(localStorage.getItem("leads") || "[]");
-      existingLeads.push(fullLead);
-      localStorage.setItem("leads", JSON.stringify(existingLeads));
+      await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          source_form: "devis",
+          capital: loanData.capital,
+          duree_restante: loanData.remainingYears,
+          banque_slug: loanData.bankKey,
+          banque_nom: bankInfo?.name ?? "Autre banque",
+          taux_actuel: loanData.currentRate,
+          tranche_age: profileData.ageRange,
+          fumeur: profileData.smoker,
+          profession_risque: profileData.riskyJob,
+          economie_estimee: result.savings,
+          taux_delegation_estime: result.delegationRate,
+          cout_mensuel_actuel: result.monthlyCostCurrent,
+          cout_mensuel_delegation: result.monthlyCostDelegation,
+          cout_total_actuel: result.totalCostCurrent,
+          cout_total_delegation: result.totalCostDelegation,
+          prenom: leadData.firstName,
+          email: leadData.email,
+          telephone: leadData.phone,
+          consent_marketing: consentMarketing,
+          session_id: getSessionId(),
+          device_type: getDeviceType(),
+          user_agent: navigator.userAgent,
+        }),
+      });
     } catch {
-      // localStorage unavailable
+      // API call failed — still show success to the user
     }
 
     setSubmitted(true);
@@ -241,6 +257,13 @@ export default function StepResults({ result, loanData, profileData, onReset }: 
               {errors.phone && (
                 <p className="text-sm text-danger-500 mt-1">{errors.phone}</p>
               )}
+            </div>
+
+            <div className="flex items-start gap-2 mt-2">
+              <input type="checkbox" id="consent" checked={consentMarketing} onChange={(e) => setConsentMarketing(e.target.checked)} className="mt-1 w-4 h-4 accent-accent-600 cursor-pointer" />
+              <label htmlFor="consent" className="text-xs text-gray-500 cursor-pointer">
+                J&apos;accepte de recevoir des informations sur l&apos;assurance emprunteur et des offres de partenaires par email.
+              </label>
             </div>
 
             <button

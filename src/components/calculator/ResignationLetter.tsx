@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useAI } from "@/lib/useAI";
 import { formatEuro, formatPercent } from "./utils";
+import { getSessionId, getDeviceType } from "@/lib/session";
 
 interface ResignationLetterProps {
   bankName: string;
@@ -98,20 +99,29 @@ export default function ResignationLetter(props: ResignationLetterProps) {
     e.preventDefault();
     if (!validate()) return;
 
-    // Store lead
+    // Store lead via API (before AI call so we capture the lead even if AI fails)
     try {
-      const leads = JSON.parse(localStorage.getItem("letter_leads") || "[]");
-      leads.push({
-        ...formData,
-        bankName,
-        capital,
-        remainingYears,
-        currentRate,
-        timestamp: new Date().toISOString(),
+      await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          source_form: "lettre",
+          nom_complet: formData.fullName,
+          adresse_postale: formData.address,
+          numero_pret: formData.loanNumber || null,
+          email: formData.email,
+          banque_nom: bankName,
+          capital,
+          duree_restante: remainingYears,
+          taux_actuel: currentRate,
+          consent_marketing: true,
+          session_id: getSessionId(),
+          device_type: getDeviceType(),
+          user_agent: navigator.userAgent,
+        }),
       });
-      localStorage.setItem("letter_leads", JSON.stringify(leads));
     } catch {
-      // localStorage unavailable
+      // API call failed — continue with letter generation
     }
 
     const userPrompt = `Rédige une lettre de changement d'assurance emprunteur avec les informations suivantes :

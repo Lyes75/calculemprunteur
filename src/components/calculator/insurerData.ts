@@ -9,6 +9,8 @@ export interface Insurer {
   bestFor: string[];
   onlineProcess: boolean;
   avgProcessingDays: number;
+  affiliateUrl: string;
+  affiliatePlatform: string;
 }
 
 export const INSURERS: Insurer[] = [
@@ -33,6 +35,8 @@ export const INSURERS: Insurer[] = [
     bestFor: ["young", "health-risk", "online"],
     onlineProcess: true,
     avgProcessingDays: 5,
+    affiliateUrl: "https://www.awin1.com/cread.php?awinaffid=xxxxx&p=https://www.april.fr/assurance-emprunteur",
+    affiliatePlatform: "awin",
   },
   {
     id: "generali",
@@ -55,6 +59,8 @@ export const INSURERS: Insurer[] = [
     bestFor: ["balanced", "senior", "high-coverage"],
     onlineProcess: true,
     avgProcessingDays: 7,
+    affiliateUrl: "https://www.awin1.com/cread.php?awinaffid=xxxxx&p=https://www.generali.fr/assurance-emprunteur",
+    affiliatePlatform: "awin",
   },
   {
     id: "swisslife",
@@ -77,6 +83,8 @@ export const INSURERS: Insurer[] = [
     bestFor: ["senior", "executive", "customizable"],
     onlineProcess: true,
     avgProcessingDays: 8,
+    affiliateUrl: "https://www.awin1.com/cread.php?awinaffid=xxxxx&p=https://www.swisslife.fr/assurance-emprunteur",
+    affiliatePlatform: "awin",
   },
   {
     id: "cardif-liberte",
@@ -99,6 +107,8 @@ export const INSURERS: Insurer[] = [
     bestFor: ["bnp-clients", "balanced", "trust"],
     onlineProcess: true,
     avgProcessingDays: 6,
+    affiliateUrl: "https://www.awin1.com/cread.php?awinaffid=xxxxx&p=https://www.cardif.fr/assurance-emprunteur",
+    affiliatePlatform: "awin",
   },
   {
     id: "suravenir",
@@ -121,6 +131,8 @@ export const INSURERS: Insurer[] = [
     bestFor: ["young", "fast", "competitive"],
     onlineProcess: true,
     avgProcessingDays: 5,
+    affiliateUrl: "https://www.awin1.com/cread.php?awinaffid=xxxxx&p=https://www.suravenir.fr/assurance-emprunteur",
+    affiliatePlatform: "awin",
   },
   {
     id: "macif",
@@ -143,5 +155,7 @@ export const INSURERS: Insurer[] = [
     bestFor: ["trust", "service", "mutual"],
     onlineProcess: false,
     avgProcessingDays: 10,
+    affiliateUrl: "https://www.awin1.com/cread.php?awinaffid=xxxxx&p=https://www.macif.fr/assurance-emprunteur",
+    affiliatePlatform: "awin",
   },
 ];
