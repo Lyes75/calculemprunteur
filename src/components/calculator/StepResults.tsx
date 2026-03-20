@@ -5,6 +5,9 @@ import type { CalculatorResult, LeadData, LoanData, ProfileData } from "./types"
 import { formatEuro, formatPercent } from "./utils";
 import CountUp from "./CountUp";
 import BarChart from "./BarChart";
+import TopRecommendations from "./TopRecommendations";
+import ResignationLetter from "./ResignationLetter";
+import { BANK_DATA } from "./constants";
 
 interface StepResultsProps {
   result: CalculatorResult;
@@ -136,6 +139,27 @@ export default function StepResults({ result, loanData, profileData, onReset }: 
 
       {/* Graphique à barres */}
       <BarChart currentCost={result.totalCostCurrent} delegationCost={result.totalCostDelegation} />
+
+      {/* Top 3 recommandations IA */}
+      <TopRecommendations
+        capital={loanData.capital}
+        remainingYears={loanData.remainingYears}
+        currentRate={loanData.currentRate}
+        ageRange={profileData.ageRange}
+        smoker={profileData.smoker}
+        riskyJob={profileData.riskyJob}
+        bankKey={loanData.bankKey}
+        currentTotalCost={result.totalCostCurrent}
+      />
+
+      {/* Lettre de résiliation IA */}
+      <ResignationLetter
+        bankName={BANK_DATA[loanData.bankKey]?.name ?? "Autre banque"}
+        capital={loanData.capital}
+        remainingYears={loanData.remainingYears}
+        currentRate={loanData.currentRate}
+        monthlyCostCurrent={result.monthlyCostCurrent}
+      />
 
       {/* Formulaire de lead */}
       {!submitted ? (
