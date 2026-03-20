@@ -112,7 +112,7 @@ Rédige les 3 paragraphes personnalisés.`;
   if (top3.length === 0) return null;
 
   return (
-    <div className="space-y-4">
+    <div id="top-recommendations" className="space-y-4 scroll-mt-24">
       <h3 className="text-lg md:text-xl font-semibold text-gray-900">
         Les 3 meilleures offres pour votre profil
       </h3>
@@ -154,6 +154,10 @@ Rédige les 3 paragraphes personnalisés.`;
       <p className="text-xs text-gray-400 text-center">
         * Taux et économies estimés selon votre profil. Devis personnalisé sur demande.
       </p>
+
+      <div className="mt-4 text-center text-sm text-gray-500">
+        <p>✓ Simulation sans engagement · ✓ Souscription 100% en ligne · ✓ Même couverture garantie</p>
+      </div>
     </div>
   );
 }

@@ -1,14 +1,12 @@
 "use client";
 
-import { useState } from "react";
-import type { CalculatorResult, LeadData, LoanData, ProfileData } from "./types";
+import type { CalculatorResult, LoanData, ProfileData } from "./types";
 import { formatEuro, formatPercent } from "./utils";
 import CountUp from "./CountUp";
 import BarChart from "./BarChart";
 import TopRecommendations from "./TopRecommendations";
 import ResignationLetter from "./ResignationLetter";
 import { BANK_DATA } from "./constants";
-import { getSessionId, getDeviceType } from "@/lib/session";
 
 interface StepResultsProps {
   result: CalculatorResult;
@@ -18,80 +16,7 @@ interface StepResultsProps {
 }
 
 export default function StepResults({ result, loanData, profileData, onReset }: StepResultsProps) {
-  const [leadData, setLeadData] = useState<LeadData>({
-    firstName: "",
-    email: "",
-    phone: "",
-  });
-  const [errors, setErrors] = useState<Record<string, string>>({});
-  const [submitted, setSubmitted] = useState(false);
-  const [consentMarketing, setConsentMarketing] = useState(false);
-
   const isLowSavings = result.savings < 500;
-
-  function validateForm(): boolean {
-    const newErrors: Record<string, string> = {};
-
-    if (!leadData.firstName.trim()) {
-      newErrors.firstName = "Veuillez entrer votre prénom";
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(leadData.email)) {
-      newErrors.email = "Veuillez entrer un email valide";
-    }
-
-    const phoneRegex = /^(?:(?:\+33|0033|0)\s*[1-9])(?:[\s.-]*\d{2}){4}$/;
-    const cleanPhone = leadData.phone.replace(/\s/g, "");
-    if (!phoneRegex.test(cleanPhone) && cleanPhone.length !== 10) {
-      newErrors.phone = "Veuillez entrer un numéro de téléphone valide (10 chiffres)";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  }
-
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    if (!validateForm()) return;
-
-    const bankInfo = BANK_DATA[loanData.bankKey];
-
-    try {
-      await fetch("/api/leads", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          source_form: "devis",
-          capital: loanData.capital,
-          duree_restante: loanData.remainingYears,
-          banque_slug: loanData.bankKey,
-          banque_nom: bankInfo?.name ?? "Autre banque",
-          taux_actuel: loanData.currentRate,
-          tranche_age: profileData.ageRange,
-          fumeur: profileData.smoker,
-          profession_risque: profileData.riskyJob,
-          economie_estimee: result.savings,
-          taux_delegation_estime: result.delegationRate,
-          cout_mensuel_actuel: result.monthlyCostCurrent,
-          cout_mensuel_delegation: result.monthlyCostDelegation,
-          cout_total_actuel: result.totalCostCurrent,
-          cout_total_delegation: result.totalCostDelegation,
-          prenom: leadData.firstName,
-          email: leadData.email,
-          telephone: leadData.phone,
-          consent_marketing: consentMarketing,
-          session_id: getSessionId(),
-          device_type: getDeviceType(),
-          user_agent: navigator.userAgent,
-        }),
-      });
-    } catch {
-      // API call failed — still show success to the user
-    }
-
-    setSubmitted(true);
-  }
 
   return (
     <div className="space-y-8">
@@ -185,110 +110,23 @@ export default function StepResults({ result, loanData, profileData, onReset }: 
         monthlyCostCurrent={result.monthlyCostCurrent}
       />
 
-      {/* Formulaire de lead */}
-      {!submitted ? (
-        <div className="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-200">
-          <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-1">
-            Recevez 3 devis personnalisés gratuits
-          </h3>
-          <p className="text-sm text-gray-500 mb-6">
-            Sans engagement — Réponse sous 24h
-          </p>
-
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label className="text-sm font-medium text-gray-700 mb-1 block">
-                Prénom
-              </label>
-              <input
-                type="text"
-                value={leadData.firstName}
-                onChange={(e) => setLeadData({ ...leadData, firstName: e.target.value })}
-                placeholder="Votre prénom"
-                className={`
-                  w-full bg-white border rounded-lg px-4 py-3 text-base text-gray-900
-                  placeholder:text-gray-400 transition-colors duration-150
-                  ${errors.firstName ? "border-danger-500" : "border-gray-300"}
-                  focus:border-primary-800 focus:ring-2 focus:ring-primary-100 focus:outline-none
-                `}
-              />
-              {errors.firstName && (
-                <p className="text-sm text-danger-500 mt-1">{errors.firstName}</p>
-              )}
-            </div>
-
-            <div>
-              <label className="text-sm font-medium text-gray-700 mb-1 block">
-                Email
-              </label>
-              <input
-                type="email"
-                value={leadData.email}
-                onChange={(e) => setLeadData({ ...leadData, email: e.target.value })}
-                placeholder="votre@email.fr"
-                className={`
-                  w-full bg-white border rounded-lg px-4 py-3 text-base text-gray-900
-                  placeholder:text-gray-400 transition-colors duration-150
-                  ${errors.email ? "border-danger-500" : "border-gray-300"}
-                  focus:border-primary-800 focus:ring-2 focus:ring-primary-100 focus:outline-none
-                `}
-              />
-              {errors.email && (
-                <p className="text-sm text-danger-500 mt-1">{errors.email}</p>
-              )}
-            </div>
-
-            <div>
-              <label className="text-sm font-medium text-gray-700 mb-1 block">
-                Téléphone
-              </label>
-              <input
-                type="tel"
-                value={leadData.phone}
-                onChange={(e) => setLeadData({ ...leadData, phone: e.target.value })}
-                placeholder="06 12 34 56 78"
-                className={`
-                  w-full bg-white border rounded-lg px-4 py-3 text-base text-gray-900
-                  placeholder:text-gray-400 transition-colors duration-150
-                  ${errors.phone ? "border-danger-500" : "border-gray-300"}
-                  focus:border-primary-800 focus:ring-2 focus:ring-primary-100 focus:outline-none
-                `}
-              />
-              {errors.phone && (
-                <p className="text-sm text-danger-500 mt-1">{errors.phone}</p>
-              )}
-            </div>
-
-            <div className="flex items-start gap-2 mt-2">
-              <input type="checkbox" id="consent" checked={consentMarketing} onChange={(e) => setConsentMarketing(e.target.checked)} className="mt-1 w-4 h-4 accent-accent-600 cursor-pointer" />
-              <label htmlFor="consent" className="text-xs text-gray-500 cursor-pointer">
-                J&apos;accepte de recevoir des informations sur l&apos;assurance emprunteur et des offres de partenaires par email.
-              </label>
-            </div>
-
-            <button
-              type="submit"
-              className="
-                w-full bg-accent-600 hover:bg-accent-500 text-white font-semibold
-                rounded-xl px-8 py-4 text-base md:text-lg shadow-md hover:shadow-lg
-                transition-all duration-200 active:scale-[0.98] cursor-pointer
-              "
-            >
-              Recevoir mes devis gratuits →
-            </button>
-          </form>
-        </div>
-      ) : (
-        <div className="bg-success-50 border border-success-500 rounded-2xl p-6 text-center">
-          <div className="text-success-600 text-3xl mb-2">✓</div>
-          <p className="text-success-600 font-semibold text-lg">
-            Demande envoyée !
-          </p>
-          <p className="text-gray-600 text-sm mt-1">
-            Vous recevrez vos devis sous 24h.
-          </p>
-        </div>
-      )}
+      {/* Bloc de clôture — redirige vers le Top 3 */}
+      <div className="bg-primary-50 rounded-xl p-8 text-center mt-4">
+        <h3 className="text-xl font-bold text-gray-900 mb-2">
+          Prêt à passer à l&apos;action ?
+        </h3>
+        <p className="text-gray-600 mb-6 text-sm">
+          Choisissez votre nouvel assureur et envoyez votre lettre de changement.
+          Votre banque a 10 jours pour répondre.
+        </p>
+        <button
+          type="button"
+          onClick={() => document.getElementById("top-recommendations")?.scrollIntoView({ behavior: "smooth" })}
+          className="bg-accent-600 hover:bg-accent-500 text-white font-semibold py-3 px-8 rounded-xl transition-all duration-200 cursor-pointer shadow-md hover:shadow-lg"
+        >
+          Voir les offres recommandées ↑
+        </button>
+      </div>
 
       <div className="text-center">
         <button
