@@ -4,7 +4,7 @@ import { getSupabaseAdmin } from "@/lib/supabase";
 export const dynamic = "force-dynamic";
 
 const rateLimitMap = new Map<string, number[]>();
-const RATE_LIMIT_MAX = 5;
+const RATE_LIMIT_MAX = 20;
 const RATE_LIMIT_WINDOW = 60 * 60 * 1000;
 
 function isRateLimited(ip: string): boolean {
@@ -148,7 +148,7 @@ export async function POST(req: NextRequest) {
     if (error) {
       console.error("Lead insert error:", error);
       return NextResponse.json(
-        { error: "Erreur lors de l'enregistrement." },
+        { error: "Erreur lors de l'enregistrement.", detail: error.message },
         { status: 500 }
       );
     }
