@@ -3,14 +3,14 @@
 import { useEffect, useRef } from "react";
 
 const BANKS = [
-  { name: "Crédit Agricole", insurer: "Predica", rate: 0.42, slug: "credit-agricole" },
-  { name: "BNP Paribas", insurer: "Cardif", rate: 0.45, slug: "bnp-paribas" },
-  { name: "Caisse d'Épargne", insurer: "CNP", rate: 0.44, slug: "caisse-depargne" },
-  { name: "LCL", insurer: "Predica", rate: 0.43, slug: "lcl" },
-  { name: "La Banque Postale", insurer: "CNP", rate: 0.46, slug: "banque-postale" },
-  { name: "Société Générale", insurer: "Sogecap", rate: 0.40, slug: "societe-generale" },
-  { name: "Banque Populaire", insurer: "BPCE Vie", rate: 0.41, slug: "banque-populaire" },
-  { name: "Crédit Mutuel", insurer: "ACM", rate: 0.38, slug: "credit-mutuel" },
+  { name: "Crédit Agricole", insurer: "Predica", rate: 0.42, slug: "credit-agricole", initials: "CA", color: "#006A4E" },
+  { name: "BNP Paribas", insurer: "Cardif", rate: 0.45, slug: "bnp-paribas", initials: "BNP", color: "#00915A" },
+  { name: "Caisse d'Épargne", insurer: "CNP", rate: 0.44, slug: "caisse-depargne", initials: "CE", color: "#E4002B" },
+  { name: "LCL", insurer: "Predica", rate: 0.43, slug: "lcl", initials: "LCL", color: "#002D72" },
+  { name: "La Banque Postale", insurer: "CNP", rate: 0.46, slug: "banque-postale", initials: "BP", color: "#003DA5" },
+  { name: "Société Générale", insurer: "Sogecap", rate: 0.40, slug: "societe-generale", initials: "SG", color: "#E4002B" },
+  { name: "Banque Populaire", insurer: "BPCE Vie", rate: 0.41, slug: "banque-populaire", initials: "BP", color: "#0072CE" },
+  { name: "Crédit Mutuel", insurer: "ACM", rate: 0.38, slug: "credit-mutuel", initials: "CM", color: "#004A99" },
 ];
 
 function computeSavings(bankRate: number): string {
@@ -66,12 +66,22 @@ export default function BankRatesGrid() {
               key={bank.slug}
               className="fade-up bg-white rounded-xl border border-gray-200 p-5 hover:shadow-md hover:border-primary-200 transition-all duration-200"
             >
-              <h3 className="text-base font-semibold text-gray-900 mb-1">
-                {bank.name}
-              </h3>
-              <p className="text-xs text-gray-500 mb-3">
-                Contrat : {bank.insurer}
-              </p>
+              <div className="flex items-center gap-3 mb-3">
+                <div
+                  className="w-10 h-10 rounded-full flex items-center justify-center text-white text-xs font-bold shrink-0"
+                  style={{ backgroundColor: bank.color }}
+                >
+                  {bank.initials}
+                </div>
+                <div>
+                  <h3 className="text-base font-semibold text-gray-900 leading-tight">
+                    {bank.name}
+                  </h3>
+                  <p className="text-xs text-gray-500">
+                    Contrat : {bank.insurer}
+                  </p>
+                </div>
+              </div>
               <p className="text-xl font-bold text-primary-800 mb-1">
                 {bank.rate.toFixed(2).replace(".", ",")} %
               </p>
