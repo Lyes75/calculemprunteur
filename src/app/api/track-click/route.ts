@@ -1,56 +1,45 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { getSupabaseAdmin } from '@/lib/supabase';
+import { NextRequest, NextResponse } from "next/server";
+import { getSupabaseAdmin } from "@/lib/supabase";
 
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
 
-    const {
-      session_id,
-      insurer_slug,
-      insurer_name,
-      click_url,
-      source_page,
-      device_type,
-      utm_source,
-      utm_medium,
-      utm_campaign,
-    } = body;
-
     const ip =
-      req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
-      req.headers.get('x-real-ip') ||
-      'unknown';
+      req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      req.headers.get("x-real-ip") ||
+      "unknown";
 
-    const userAgent = req.headers.get('user-agent') || null;
+    const userAgent = req.headers.get("user-agent") || null;
 
     const sb = getSupabaseAdmin();
 
-    // Fire-and-forget: insert click tracking, don't block on result
-    sb.from('affiliate_clicks')
+    sb.from("affiliate_clicks")
       .insert({
-        session_id: session_id || null,
-        insurer_slug: insurer_slug || 'unknown',
-        insurer_name: insurer_name || null,
-        click_url: click_url || null,
-        source_page: source_page || null,
-        device_type: device_type || null,
+        session_id: body.session_id || null,
+        insurer_slug: body.insurer_slug || "unknown",
+        insurer_name: body.insurer_name || null,
+        affiliate_platform: body.affiliate_platform || "awin",
+        affiliate_url: body.affiliate_url || body.click_url || null,
+        source_page: body.source_page || "/",
+        source_component: body.source_component || "top3",
+        capital: body.capital ? Number(body.capital) : null,
+        banque_slug: body.banque_slug || null,
+        economie_estimee: body.economie_estimee ? Number(body.economie_estimee) : null,
+        tranche_age: body.tranche_age || null,
+        device_type: body.device_type || null,
         ip_address: ip,
         user_agent: userAgent,
-        utm_source: utm_source || null,
-        utm_medium: utm_medium || null,
-        utm_campaign: utm_campaign || null,
       })
       .then(({ error }) => {
-        if (error) console.error('Click tracking insert error:', error);
+        if (error) console.error("Click tracking insert error:", error);
       });
 
     return NextResponse.json({ success: true });
   } catch (err) {
-    console.error('Track-click API error:', err);
-    // Always return success - fire-and-forget pattern
+    console.error("Track-click API error:", err);
     return NextResponse.json({ success: true });
   }
 }
