@@ -140,8 +140,8 @@ export default function InsurerReviewsGrid() {
         </div>
 
         <p className="text-gray-700 leading-relaxed mb-10 max-w-3xl mx-auto text-center fade-up">
-          Tous les assureurs ne se valent pas : tarifs, délais de traitement,
-          qualité du service client, conditions d&apos;indemnisation. Nous
+          Après votre changement d&apos;assurance emprunteur, voici les assureurs en délégation les mieux notés. Tarifs, délais de traitement,
+          qualité du service client, conditions d&apos;indemnisation : nous
           analysons objectivement les principaux acteurs du marché pour vous
           aider à faire le bon choix.
         </p>

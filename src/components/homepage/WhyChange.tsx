@@ -40,7 +40,7 @@ export default function WhyChange() {
         <div className="fade-up">
           <div className="w-10 h-1 bg-accent-600 mb-4 rounded-full" />
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-            Loi Lemoine : changez d&apos;assurance emprunteur à tout moment
+            Changement d&apos;assurance emprunteur : pourquoi et comment en profiter ?
           </h2>
         </div>
 
@@ -73,7 +73,11 @@ export default function WhyChange() {
             n&apos;est économiser.
           </p>
           <p>
-            La procédure est plus simple qu&apos;il n&apos;y paraît : il suffit d&apos;envoyer une lettre de résiliation à votre banque avec votre nouveau contrat d&apos;assurance. Votre banque dispose de 10 jours ouvrés pour accepter ou motiver un refus (uniquement si les garanties ne sont pas équivalentes). Sur CalculEmprunteur.fr, cette lettre est générée automatiquement avec les données de votre prêt — il ne vous reste plus qu&apos;à l&apos;envoyer.
+            Le changement d&apos;assurance emprunteur est totalement gratuit. Il n&apos;y a aucuns frais de dossier, aucune pénalité, et aucun préavis à respecter depuis la loi Lemoine de 2022. Le délai de traitement est de 10 jours ouvrés maximum : votre banque doit accepter ou motiver un refus écrit dans ce délai. En pratique, le changement complet prend 2 à 4 semaines entre la souscription de votre nouveau contrat et la prise d&apos;effet.
+          </p>
+
+          <p>
+            La procédure est plus simple qu&apos;il n&apos;y paraît : il suffit d&apos;envoyer une lettre de changement à votre banque accompagnée de votre nouveau contrat d&apos;assurance. Votre banque dispose de 10 jours ouvrés pour accepter ou motiver un refus (uniquement si les garanties ne sont pas équivalentes). Sur CalculEmprunteur.fr, cette lettre de changement est générée automatiquement avec les données de votre prêt — il ne vous reste plus qu&apos;à l&apos;envoyer.
           </p>
         </div>
 

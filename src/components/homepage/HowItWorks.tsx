@@ -87,7 +87,7 @@ export default function HowItWorks() {
         <div className="text-center mb-12 fade-up">
           <div className="w-10 h-1 bg-accent-600 mx-auto mb-4 rounded-full" />
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-            Comment changer d&apos;assurance emprunteur ?
+            Comment changer d&apos;assurance emprunteur en 2026 ?
           </h2>
         </div>
 

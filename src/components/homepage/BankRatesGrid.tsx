@@ -56,7 +56,7 @@ export default function BankRatesGrid() {
         <p className="text-gray-700 leading-relaxed mb-10 max-w-3xl mx-auto text-center fade-up">
           Chaque banque propose son propre contrat d&apos;assurance groupe, géré
           par sa filiale assurance. Les taux varient selon les établissements,
-          mais restent généralement supérieurs aux offres en délégation. Voici
+          mais restent généralement supérieurs aux offres en délégation. En changeant pour une assurance en délégation, vous pouvez diviser ce taux par 2 à 4. Voici
           les taux moyens constatés par banque.
         </p>
 

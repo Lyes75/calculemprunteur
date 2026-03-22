@@ -31,7 +31,7 @@ const FAQ_ITEMS = [
   {
     question: "Comment fonctionne le simulateur CalculEmprunteur.fr ?",
     answer:
-      "Notre simulateur calcule vos économies en comparant votre assurance actuelle avec les meilleures offres en délégation du marché. En plus du calcul d'économie, il sélectionne les 3 assureurs les plus adaptés à votre profil — en tenant compte de votre âge, votre état de santé et votre profession — et génère automatiquement votre lettre de changement d'assurance, pré-remplie et conforme à la loi Lemoine. Le service est entièrement gratuit et sans engagement.",
+      "Notre simulateur de changement d'assurance emprunteur calcule vos économies en comparant votre assurance actuelle avec les meilleures offres en délégation du marché. En plus du calcul d'économie, il sélectionne les 3 assureurs les plus adaptés à votre profil — en tenant compte de votre âge, votre état de santé et votre profession — et génère automatiquement votre lettre de changement, pré-remplie et conforme à la loi Lemoine. Le service est entièrement gratuit et sans engagement.",
   },
   {
     question: "Quel est le prix moyen d'une assurance emprunteur ?",
@@ -62,6 +62,26 @@ const FAQ_ITEMS = [
     question: "Qu'est-ce que la convention AERAS ?",
     answer:
       "La convention AERAS (S'Assurer et Emprunter avec un Risque Aggravé de Santé) facilite l'accès à l'assurance emprunteur pour les personnes ayant ou ayant eu un problème de santé grave. Elle prévoit un droit à l'oubli pour certains cancers et maladies chroniques, et plafonne les surprimes applicables.",
+  },
+  {
+    question: "Le changement d'assurance emprunteur est-il vraiment gratuit ?",
+    answer:
+      "Oui, le changement d'assurance emprunteur est 100% gratuit depuis la loi Lemoine (juin 2022). Il n'y a aucuns frais de dossier, aucune pénalité, et aucun préavis à respecter. Votre banque ne peut pas vous facturer de frais pour traiter votre demande de changement. Le seul coût est l'envoi de votre lettre en recommandé (environ 5\u20AC).",
+  },
+  {
+    question: "Quand peut-on changer d'assurance emprunteur ?",
+    answer:
+      "Depuis la loi Lemoine, vous pouvez changer d'assurance emprunteur à tout moment, sans condition de date anniversaire ni de durée minimum de détention. Cette possibilité s'applique à tous les contrats d'assurance de prêt immobilier, quelle que soit leur date de signature. Il suffit que votre nouveau contrat offre des garanties au moins équivalentes à celles exigées par votre banque.",
+  },
+  {
+    question: "Quels documents sont nécessaires pour changer d'assurance emprunteur ?",
+    answer:
+      "Pour changer d'assurance emprunteur, vous avez besoin de : votre offre de prêt (pour connaître les garanties exigées par votre banque), votre nouveau contrat d'assurance (souscrit auprès de l'assureur en délégation de votre choix), et une lettre de demande de changement adressée à votre banque. Sur CalculEmprunteur.fr, cette lettre est générée automatiquement avec les données de votre prêt.",
+  },
+  {
+    question: "Ma banque peut-elle refuser le changement d'assurance emprunteur ?",
+    answer:
+      "Votre banque ne peut refuser le changement que si votre nouveau contrat ne respecte pas l'équivalence de garanties définie dans votre offre de prêt. Le refus doit être motivé par écrit dans un délai de 10 jours ouvrés. Tout refus non motivé, hors délai, ou pour un motif autre que l'équivalence de garanties est illégal. En cas de refus abusif, vous pouvez saisir le médiateur bancaire.",
   },
 ];
 

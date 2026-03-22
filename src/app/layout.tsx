@@ -5,15 +5,15 @@ import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title:
-    "Assurance Emprunteur : Calculez vos Économies | CalculEmprunteur",
+    "Changer d'Assurance Emprunteur : Simulez vos Économies | CalculEmprunteur",
   description:
-    "Assurance emprunteur trop chère ? Simulez gratuitement vos économies en changeant d'assurance de prêt (loi Lemoine). Comparez les taux par banque et recevez 3 devis personnalisés sans engagement.",
+    "Changement d'assurance emprunteur : simulez gratuitement vos économies en changeant d'assurance de prêt immobilier (loi Lemoine). Comparez les taux par banque et recevez 3 devis personnalisés sans engagement.",
   metadataBase: new URL("https://www.calculemprunteur.fr"),
   openGraph: {
     title:
-      "Assurance Emprunteur : Calculez vos Économies | CalculEmprunteur",
+      "Changer d'Assurance Emprunteur : Simulez vos Économies | CalculEmprunteur",
     description:
-      "Assurance emprunteur trop chère ? Simulez gratuitement vos économies en changeant d'assurance de prêt (loi Lemoine). Comparez les taux par banque et recevez 3 devis personnalisés sans engagement.",
+      "Changement d'assurance emprunteur : simulez gratuitement vos économies en changeant d'assurance de prêt immobilier (loi Lemoine). Comparez les taux par banque et recevez 3 devis personnalisés sans engagement.",
     type: "website",
     locale: "fr_FR",
     url: "https://www.calculemprunteur.fr",

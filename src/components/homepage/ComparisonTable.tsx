@@ -43,16 +43,12 @@ export default function ComparisonTable() {
         <div className="text-center mb-10 fade-up">
           <div className="w-10 h-1 bg-accent-600 mx-auto mb-4 rounded-full" />
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-            Assurance groupe vs assurance en délégation : le comparatif
+            Pourquoi changer ? Assurance groupe vs délégation
           </h2>
         </div>
 
         <p className="text-gray-700 leading-relaxed mb-8 max-w-3xl mx-auto text-center fade-up">
-          Votre banque vous propose systématiquement son assurance emprunteur
-          &laquo;&nbsp;groupe&nbsp;&raquo; lors de la signature du prêt. Or, cette assurance
-          collective est rarement la moins chère. La délégation d&apos;assurance
-          vous permet de choisir librement un assureur externe, souvent 2 à 3
-          fois moins cher à garanties équivalentes.
+          Le changement d&apos;assurance emprunteur permet de passer d&apos;un contrat groupe mutualisé à une assurance en délégation, individualisée et souvent 2 à 3 fois moins chère à garanties équivalentes.
         </p>
 
         {/* Desktop table */}

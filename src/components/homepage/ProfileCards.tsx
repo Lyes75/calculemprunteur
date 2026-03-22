@@ -122,7 +122,7 @@ export default function ProfileCards() {
         </div>
 
         <p className="text-gray-700 leading-relaxed mb-10 max-w-3xl mx-auto text-center fade-up">
-          Le coût et les conditions de votre assurance emprunteur varient
+          Les conditions de changement d&apos;assurance emprunteur varient
           considérablement selon votre situation personnelle. Âge, état de santé,
           profession, type de projet immobilier : chaque profil a ses
           spécificités. Que vous soyez senior, fonctionnaire, expatrié ou que

@@ -77,10 +77,7 @@ export default function GuaranteesExplainer() {
         </div>
 
         <p className="text-gray-700 leading-relaxed mb-10 max-w-3xl mx-auto text-center fade-up">
-          L&apos;assurance emprunteur couvre les risques qui pourraient vous
-          empêcher de rembourser votre prêt. Pour changer d&apos;assurance,
-          votre nouveau contrat doit offrir des garanties au moins équivalentes
-          à celles exigées par votre banque. Voici les garanties essentielles à
+          Lors du changement d&apos;assurance emprunteur, la seule condition est que votre nouveau contrat offre des garanties au moins équivalentes à celles exigées par votre banque. Voici les garanties essentielles à
           comprendre avant de comparer les offres.
         </p>
 
