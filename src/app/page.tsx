@@ -80,7 +80,7 @@ const webAppSchema = {
   "@type": "WebApplication",
   name: "CalculEmprunteur.fr",
   description: "Calculateur gratuit d'économies en assurance emprunteur",
-  url: "https://calculemprunteur.fr",
+  url: "https://www.calculemprunteur.fr",
   applicationCategory: "FinanceApplication",
   operatingSystem: "Web",
 };

@@ -22,7 +22,7 @@ export async function generateMetadata({
     title: bank.metaTitle,
     description: bank.metaDescription,
     alternates: {
-      canonical: `https://calculemprunteur.fr/assurance-emprunteur-${bank.slug}`,
+      canonical: `https://www.calculemprunteur.fr/assurance-emprunteur-${bank.slug}`,
     },
   };
 }

@@ -15,13 +15,13 @@ export default function BankBreadcrumb({ bankName, bankSlug }: BankBreadcrumbPro
         "@type": "ListItem",
         position: 1,
         name: "Accueil",
-        item: "https://calculemprunteur.fr/",
+        item: "https://www.calculemprunteur.fr/",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: `Changer d'assurance emprunteur ${bankName}`,
-        item: `https://calculemprunteur.fr/assurance-emprunteur-${bankSlug}`,
+        item: `https://www.calculemprunteur.fr/assurance-emprunteur-${bankSlug}`,
       },
     ],
   };

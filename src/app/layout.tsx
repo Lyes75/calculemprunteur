@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "Assurance Emprunteur : Calculez vos Économies | CalculEmprunteur",
   description:
     "Assurance emprunteur trop chère ? Simulez gratuitement vos économies en changeant d'assurance de prêt (loi Lemoine). Comparez les taux par banque et recevez 3 devis personnalisés sans engagement.",
-  metadataBase: new URL("https://calculemprunteur.fr"),
+  metadataBase: new URL("https://www.calculemprunteur.fr"),
   openGraph: {
     title:
       "Assurance Emprunteur : Calculez vos Économies | CalculEmprunteur",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       "Assurance emprunteur trop chère ? Simulez gratuitement vos économies en changeant d'assurance de prêt (loi Lemoine). Comparez les taux par banque et recevez 3 devis personnalisés sans engagement.",
     type: "website",
     locale: "fr_FR",
-    url: "https://calculemprunteur.fr",
+    url: "https://www.calculemprunteur.fr",
     siteName: "CalculEmprunteur.fr",
   },
   robots: {
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: "https://calculemprunteur.fr",
+    canonical: "https://www.calculemprunteur.fr",
   },
   icons: {
     icon: [
