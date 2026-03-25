@@ -37,19 +37,19 @@ export default function BankComparison({ bank }: BankComparisonProps) {
       isSavings: false,
     },
     {
-      label: "Mensualite assurance",
+      label: "Mensualité assurance",
       group: formatCurrency(groupMonthly),
       delegation: formatCurrency(delegationMonthly),
       isSavings: false,
     },
     {
-      label: "Cout total (20 ans)",
+      label: "Coût total (20 ans)",
       group: formatCurrency(groupTotal),
       delegation: formatCurrency(delegationTotal),
       isSavings: false,
     },
     {
-      label: "Economie potentielle",
+      label: "Économie potentielle",
       group: "",
       delegation: formatCurrency(savingsTotal),
       isSavings: true,
@@ -62,14 +62,14 @@ export default function BankComparison({ bank }: BankComparisonProps) {
         <div className="text-center mb-10">
           <div className="w-10 h-1 bg-accent-600 mx-auto mb-4 rounded-full" />
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-            Contrat {bank.insurerName} ({bank.name}) vs assurance en delegation
+            Contrat {bank.insurerName} ({bank.name}) vs assurance en délégation
           </h2>
         </div>
 
         <p className="text-gray-700 leading-relaxed mb-8 max-w-3xl mx-auto text-center">
-          Simulation basee sur un pret de 200&nbsp;000&nbsp;&euro; sur 20&nbsp;ans.
+          Simulation basée sur un prêt de 200&nbsp;000&nbsp;&euro; sur 20&nbsp;ans.
           Comparez le contrat groupe {bank.insurerName} avec les meilleures offres
-          en delegation d&apos;assurance.
+          en délégation d&apos;assurance.
         </p>
 
         {/* Desktop table */}
@@ -78,13 +78,13 @@ export default function BankComparison({ bank }: BankComparisonProps) {
             <thead>
               <tr className="bg-primary-100">
                 <th className="py-3 px-5 text-left text-xs font-semibold text-primary-800 uppercase tracking-wide">
-                  Critere
+                  Critère
                 </th>
                 <th className="py-3 px-5 text-left text-xs font-semibold text-primary-800 uppercase tracking-wide">
                   {bank.insurerName} ({bank.name})
                 </th>
                 <th className="py-3 px-5 text-left text-xs font-semibold text-primary-800 uppercase tracking-wide">
-                  Delegation d&apos;assurance
+                  Délégation d&apos;assurance
                 </th>
               </tr>
             </thead>
@@ -156,7 +156,7 @@ export default function BankComparison({ bank }: BankComparisonProps) {
                     <p className="text-sm text-gray-700">{row.group}</p>
                   </div>
                   <div>
-                    <p className="text-xs text-gray-500 mb-1">Delegation</p>
+                    <p className="text-xs text-gray-500 mb-1">Délégation</p>
                     <p className="text-sm text-accent-600 font-semibold">
                       {row.delegation}
                     </p>
@@ -168,9 +168,9 @@ export default function BankComparison({ bank }: BankComparisonProps) {
         </div>
 
         <p className="text-xs text-gray-400 text-center">
-          * Simulation indicative basee sur un capital de 200&nbsp;000&nbsp;&euro;
-          sur 20&nbsp;ans. Le taux en delegation (0,10&nbsp;%) correspond aux
-          meilleurs contrats du marche pour un profil standard.
+          * Simulation indicative basée sur un capital de 200&nbsp;000&nbsp;&euro;
+          sur 20&nbsp;ans. Le taux en délégation (0,10&nbsp;%) correspond aux
+          meilleurs contrats du marché pour un profil standard.
         </p>
       </div>
     </section>

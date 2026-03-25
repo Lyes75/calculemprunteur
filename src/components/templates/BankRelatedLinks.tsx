@@ -10,17 +10,17 @@ const PROFILE_LINKS = [
   {
     title: "Jeune emprunteur (moins de 35 ans)",
     description: "Les meilleures offres pour les jeunes actifs",
-    href: "#",
+    href: "/#simulateur",
   },
   {
     title: "Emprunteur senior (plus de 50 ans)",
-    description: "Assurance adaptee aux profils seniors",
-    href: "#",
+    description: "Assurance adaptée aux profils seniors",
+    href: "/#simulateur",
   },
   {
-    title: "Profession a risque",
-    description: "Solutions pour les metiers specifiques",
-    href: "#",
+    title: "Profession à risque",
+    description: "Solutions pour les métiers spécifiques",
+    href: "/#simulateur",
   },
 ];
 
@@ -59,7 +59,7 @@ export default function BankRelatedLinks({ bank }: BankRelatedLinksProps) {
                   Taux groupe : {relatedBank.groupRate.toFixed(2).replace(".", ",")} %
                 </p>
                 <p className="text-xs text-accent-600 mt-1">
-                  Voir le detail &rarr;
+                  Voir le détail &rarr;
                 </p>
               </Link>
             ))}
@@ -85,7 +85,7 @@ export default function BankRelatedLinks({ bank }: BankRelatedLinksProps) {
                   {profile.description}
                 </p>
                 <p className="text-xs text-accent-600 mt-2 font-medium">
-                  En savoir plus &rarr;
+                  Simuler pour ce profil &rarr;
                 </p>
               </Link>
             ))}

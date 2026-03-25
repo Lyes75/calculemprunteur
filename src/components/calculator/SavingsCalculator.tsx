@@ -25,7 +25,7 @@ export default function SavingsCalculator({
     capital: 200000,
     remainingYears: 15,
     bankKey: preselectedBank || "",
-    currentRate: preselectedRate ? preselectedRate * 100 : 0,
+    currentRate: preselectedRate || 0,
   });
   const [profileData, setProfileData] = useState<ProfileData>({
     ageRange: "",

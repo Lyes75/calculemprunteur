@@ -9,7 +9,7 @@ export default function BankSwitchSteps({ bank }: BankSwitchStepsProps) {
     {
       number: "01",
       title: "Comparez les offres",
-      description: `Utilisez notre simulateur pour comparer le contrat ${bank.insurerName} de ${bank.name} avec les meilleures assurances en delegation. En 2 minutes, vous connaissez votre economie.`,
+      description: `Utilisez notre simulateur pour comparer le contrat ${bank.insurerName} de ${bank.name} avec les meilleures assurances en délégation. En 2 minutes, vous connaissez votre économie.`,
       icon: (
         <svg
           className="w-10 h-10 text-primary-800"
@@ -29,7 +29,7 @@ export default function BankSwitchSteps({ bank }: BankSwitchStepsProps) {
     {
       number: "02",
       title: "Souscrivez votre nouveau contrat",
-      description: `Choisissez l'assureur qui correspond a votre profil. Il se charge de constituer un dossier avec des garanties equivalentes a celles exigees par ${bank.name}.`,
+      description: `Choisissez l'assureur qui correspond à votre profil. Il se charge de constituer un dossier avec des garanties équivalentes à celles exigées par ${bank.name}.`,
       icon: (
         <svg
           className="w-10 h-10 text-primary-800"
@@ -49,7 +49,7 @@ export default function BankSwitchSteps({ bank }: BankSwitchStepsProps) {
     {
       number: "03",
       title: "Envoyez votre lettre de changement",
-      description: `Adressez votre demande de substitution a ${bank.name}. La banque dispose de 10 jours ouvrables pour accepter ou motiver un refus. Aucuns frais de changement.`,
+      description: `Adressez votre demande de substitution à ${bank.name}. La banque dispose de 10 jours ouvrables pour accepter ou motiver un refus. Aucuns frais de changement.`,
       icon: (
         <svg
           className="w-10 h-10 text-primary-800"

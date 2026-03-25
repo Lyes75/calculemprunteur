@@ -3,8 +3,8 @@ import Image from "next/image";
 const COL2_LINKS = [
   { label: "Simulateur", href: "#simulateur" },
   { label: "Loi Lemoine", href: "#loi-lemoine" },
-  { label: "Loi Hamon", href: "#" },
-  { label: "Convention AERAS", href: "#" },
+  { label: "Loi Hamon", href: "/#loi-lemoine" },
+  { label: "Convention AERAS", href: "/#faq" },
   { label: "FAQ", href: "#faq" },
 ];
 

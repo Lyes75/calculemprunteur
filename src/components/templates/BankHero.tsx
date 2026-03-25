@@ -21,19 +21,19 @@ export default function BankHero({ bank }: BankHeroProps) {
           </div>
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight">
             Changer l&apos;assurance emprunteur {bank.name}&nbsp;: combien
-            {" "}economiser&nbsp;?
+            {" "}&eacute;conomiser&nbsp;?
           </h1>
         </div>
 
         <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-3xl">
           Le contrat groupe <strong className="text-gray-800">{bank.contractName}</strong>,
-          assure par <strong className="text-gray-800">{bank.insurerName}</strong>,
+          assuré par <strong className="text-gray-800">{bank.insurerName}</strong>,
           affiche un taux moyen de{" "}
           <strong className="text-primary-800">{rateDisplay}&nbsp;%</strong> du capital
-          emprunt&eacute;. En d&eacute;l&eacute;gation d&apos;assurance, les meilleurs contrats
-          d&eacute;marrent &agrave;{" "}
+          emprunté. En délégation d&apos;assurance, les meilleurs contrats
+          démarrent à{" "}
           <strong className="text-accent-600">{delegationDisplay}&nbsp;%</strong>.
-          D&eacute;couvrez combien vous pouvez &eacute;conomiser.
+          Découvrez combien vous pouvez économiser.
         </p>
       </div>
     </section>

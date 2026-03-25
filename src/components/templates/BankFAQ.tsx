@@ -8,20 +8,20 @@ interface BankFAQProps {
 export default function BankFAQ({ bank }: BankFAQProps) {
   const faqItems = [
     {
-      question: `Puis-je changer l'assurance emprunteur de ${bank.name} a tout moment ?`,
-      answer: `Oui, depuis la loi Lemoine (juin 2022), vous pouvez changer votre assurance emprunteur ${bank.name} a tout moment, sans frais et sans attendre de date anniversaire. Il vous suffit de souscrire un nouveau contrat presentant des garanties au moins equivalentes a celles du contrat ${bank.insurerName}.`,
+      question: `Puis-je changer l'assurance emprunteur de ${bank.name} à tout moment ?`,
+      answer: `Oui, depuis la loi Lemoine (juin 2022), vous pouvez changer votre assurance emprunteur ${bank.name} à tout moment, sans frais et sans attendre de date anniversaire. Il vous suffit de souscrire un nouveau contrat présentant des garanties au moins équivalentes à celles du contrat ${bank.insurerName}.`,
     },
     {
       question: `${bank.name} peut-elle refuser mon changement d'assurance ?`,
-      answer: `${bank.name} ne peut refuser votre changement que si le nouveau contrat ne presente pas des garanties equivalentes a celles du contrat ${bank.insurerName}. La banque dispose de 10 jours ouvres pour vous notifier sa decision et doit motiver tout refus de maniere precise.`,
+      answer: `${bank.name} ne peut refuser votre changement que si le nouveau contrat ne présente pas des garanties équivalentes à celles du contrat ${bank.insurerName}. La banque dispose de 10 jours ouvrés pour vous notifier sa décision et doit motiver tout refus de manière précise.`,
     },
     {
-      question: `Combien coute le changement d'assurance chez ${bank.name} ?`,
-      answer: `Le changement d'assurance emprunteur chez ${bank.name} est totalement gratuit. La loi interdit a la banque de facturer des frais de resiliation ou de modification. Votre nouvel assureur prend en charge l'ensemble des demarches administratives.`,
+      question: `Combien coûte le changement d'assurance chez ${bank.name} ?`,
+      answer: `Le changement d'assurance emprunteur chez ${bank.name} est totalement gratuit. La loi interdit à la banque de facturer des frais de résiliation ou de modification. Votre nouvel assureur prend en charge l'ensemble des démarches administratives.`,
     },
     {
-      question: `Combien puis-je economiser en quittant le contrat ${bank.insurerName} ?`,
-      answer: `L'economie depend de votre profil et du montant de votre pret. En moyenne, les emprunteurs ${bank.name} economisent entre 5 000 et 15 000 euros sur la duree de leur pret en passant d'un taux de ${bank.groupRate.toFixed(2).replace(".", ",")} % a un contrat en delegation autour de 0,10 %. Utilisez notre simulateur pour obtenir une estimation personnalisee.`,
+      question: `Combien puis-je économiser en quittant le contrat ${bank.insurerName} ?`,
+      answer: `L'économie dépend de votre profil et du montant de votre prêt. En moyenne, les emprunteurs ${bank.name} économisent entre 5 000 et 15 000 euros sur la durée de leur prêt en passant d'un taux de ${bank.groupRate.toFixed(2).replace(".", ",")} % à un contrat en délégation autour de 0,10 %. Utilisez notre simulateur pour obtenir une estimation personnalisée.`,
     },
   ];
 
@@ -46,7 +46,7 @@ export default function BankFAQ({ bank }: BankFAQProps) {
         <div className="text-center mb-12">
           <div className="w-10 h-1 bg-accent-600 mx-auto mb-4 rounded-full" />
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-            Questions frequentes : assurance emprunteur {bank.name}
+            Questions fréquentes : assurance emprunteur {bank.name}
           </h2>
         </div>
 
