@@ -99,7 +99,7 @@ export default function MentionsLegales() {
               Protection des données personnelles (RGPD)
             </h2>
             <p className="mb-4">
-              calculemprunteur.fr collecte votre adresse email uniquement
+              www.calculemprunteur.fr collecte votre adresse email uniquement
               lorsque vous demandez à recevoir votre rapport de simulation par
               email. Cette donnée est stockée de manière sécurisée et
               n&apos;est jamais partagée avec des tiers.
