@@ -82,7 +82,7 @@ export default function BankSwitchSteps({ bank }: BankSwitchStepsProps) {
           {steps.map((step) => (
             <div
               key={step.number}
-              className="bg-gray-50 rounded-xl border border-gray-100 p-6 text-center"
+              className="bg-gray-50 rounded-xl border border-gray-100 p-6 text-center flex flex-col"
             >
               <span className="text-4xl font-extrabold text-accent-600/10 leading-none block mb-2">
                 {step.number}
@@ -93,7 +93,7 @@ export default function BankSwitchSteps({ bank }: BankSwitchStepsProps) {
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 {step.title}
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-600 text-sm leading-relaxed flex-1">
                 {step.description}
               </p>
             </div>

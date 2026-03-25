@@ -12,20 +12,12 @@ export default function BankHero({ bank }: BankHeroProps) {
   return (
     <section className="bg-gray-50 pt-8 pb-6">
       <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
-        <div className="flex items-center gap-4 mb-4">
-          <div
-            className="w-14 h-14 rounded-full flex items-center justify-center text-white text-sm font-bold shrink-0"
-            style={{ backgroundColor: bank.badgeColor }}
-          >
-            {bank.shortName}
-          </div>
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight">
-            Changer l&apos;assurance emprunteur {bank.name}&nbsp;: combien
-            {" "}&eacute;conomiser&nbsp;?
-          </h1>
-        </div>
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight text-center mb-4">
+          Changer l&apos;assurance emprunteur {bank.name}&nbsp;: combien
+          {" "}&eacute;conomiser&nbsp;?
+        </h1>
 
-        <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-3xl">
+        <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto text-center">
           Le contrat groupe <strong className="text-gray-800">{bank.contractName}</strong>,
           assuré par <strong className="text-gray-800">{bank.insurerName}</strong>,
           affiche un taux moyen de{" "}
@@ -34,6 +26,9 @@ export default function BankHero({ bank }: BankHeroProps) {
           démarrent à{" "}
           <strong className="text-accent-600">{delegationDisplay}&nbsp;%</strong>.
           Découvrez combien vous pouvez économiser.
+        </p>
+        <p className="text-xs text-gray-400 mt-2 max-w-xl mx-auto text-center">
+          * Taux indicatifs. Votre tarif réel dépend de votre profil.
         </p>
       </div>
     </section>
