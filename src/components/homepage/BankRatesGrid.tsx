@@ -98,14 +98,6 @@ export default function BankRatesGrid() {
           ))}
         </div>
 
-        <div className="text-center fade-up">
-          <a
-            href="#"
-            className="inline-flex items-center text-primary-800 hover:text-primary-700 font-semibold transition-colors text-sm"
-          >
-            Voir toutes les banques →
-          </a>
-        </div>
 
         <p className="text-xs text-gray-400 text-center mt-6 fade-up">
           * Taux indicatifs basés sur les contrats groupe moyens constatés. Votre
