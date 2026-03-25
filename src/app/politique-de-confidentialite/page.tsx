@@ -44,8 +44,6 @@ export default function PolitiqueConfidentialite() {
             <p className="mt-2">
               <strong>Netaudience</strong>
               <br />
-              Représentant : Lyes Boussouf
-              <br />
               Email :{" "}
               <a
                 href="mailto:contact@calculemprunteur.fr"
