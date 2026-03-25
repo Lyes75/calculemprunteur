@@ -151,8 +151,9 @@ Rédige les 3 paragraphes personnalisés.`;
         </div>
       )}
 
-      <p className="text-xs text-gray-400 text-center">
-        * Taux et économies estimés selon votre profil. Devis personnalisé sur demande.
+      <p className="text-xs text-gray-400 text-center max-w-md mx-auto">
+        * Estimations indicatives basées sur les taux moyens. Le tarif exact dépend de
+        votre profil. Cliquez sur &laquo;&nbsp;Demander un devis&nbsp;&raquo; pour obtenir un tarif personnalisé.
       </p>
 
       <div className="mt-4 text-center text-sm text-gray-500">

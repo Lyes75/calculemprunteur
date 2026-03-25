@@ -77,7 +77,7 @@ export default function RecommendationCard({
         <div>
           <p className="text-xs text-gray-500">Économie</p>
           <p className="text-lg font-semibold text-success-600">
-            ~{formatEuro(insurer.estimatedSavings)}
+            ~{formatEuro(insurer.estimatedSavings)}*
           </p>
         </div>
       </div>

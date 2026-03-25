@@ -100,8 +100,9 @@ export default function BankRatesGrid() {
 
 
         <p className="text-xs text-gray-400 text-center mt-6 fade-up">
-          * Taux indicatifs basés sur les contrats groupe moyens constatés. Votre
-          taux réel dépend de votre contrat et de votre profil.
+          * Taux et économies indicatifs basés sur les contrats groupe moyens constatés
+          (prêt de 200 000 € sur 20 ans). Votre résultat réel dépend de votre contrat,
+          votre profil et l&apos;assureur choisi.
         </p>
       </div>
     </section>

@@ -167,10 +167,12 @@ export default function BankComparison({ bank }: BankComparisonProps) {
           ))}
         </div>
 
-        <p className="text-xs text-gray-400 text-center">
+        <p className="text-xs text-gray-400 text-center mt-4 max-w-lg mx-auto">
           * Simulation indicative basée sur un capital de 200&nbsp;000&nbsp;&euro;
           sur 20&nbsp;ans. Le taux en délégation (0,10&nbsp;%) correspond aux
-          meilleurs contrats du marché pour un profil standard.
+          meilleurs contrats du marché pour un profil standard (30-40 ans,
+          non-fumeur, sans risque aggravé). Votre tarif réel peut varier
+          — demandez un devis pour un chiffre personnalisé.
         </p>
       </div>
     </section>

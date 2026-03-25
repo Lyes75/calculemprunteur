@@ -26,7 +26,7 @@ export default function StepResults({ result, loanData, profileData, onReset }: 
           Vous pourriez économiser
         </p>
         <p className={`text-4xl md:text-5xl font-extrabold tracking-tight ${isLowSavings ? "text-warning-500" : "text-accent-600"}`}>
-          <CountUp target={result.savings} />
+          <CountUp target={result.savings} />*
         </p>
         <p className="text-gray-600 text-sm mt-2">
           sur les {loanData.remainingYears} années restantes de votre prêt
@@ -36,6 +36,11 @@ export default function StepResults({ result, loanData, profileData, onReset }: 
             L&apos;économie estimée est faible. Votre assurance actuelle est déjà compétitive.
           </p>
         )}
+        <p className="text-xs text-gray-400 mt-3 max-w-md mx-auto">
+          * Estimation indicative basée sur les taux moyens du marché. Le montant exact
+          dépend de votre profil et de l&apos;assureur choisi. Demandez un devis pour obtenir
+          votre tarif personnalisé.
+        </p>
       </div>
 
       {/* Tableau comparatif */}
@@ -77,6 +82,9 @@ export default function StepResults({ result, loanData, profileData, onReset }: 
           </tbody>
         </table>
       </div>
+      <p className="text-xs text-gray-400 mt-2">
+        * Estimation indicative. Tarif réel sur devis.
+      </p>
 
       {/* Graphique à barres */}
       <BarChart currentCost={result.totalCostCurrent} delegationCost={result.totalCostDelegation} />
