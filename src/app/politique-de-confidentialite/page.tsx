@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Politique de Confidentialité | CalculEmprunteur.fr",
   description:
     "Politique de confidentialité de CalculEmprunteur.fr. Découvrez comment nous collectons, utilisons et protégeons vos données personnelles.",
-  robots: "noindex, follow",
+  robots: "index, follow",
   alternates: {
     canonical:
       "https://www.calculemprunteur.fr/politique-de-confidentialite",
