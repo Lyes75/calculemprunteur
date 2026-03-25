@@ -4,7 +4,7 @@ export const BANK_DATA: Record<string, BankInfo> = {
   "credit-agricole": { name: "Crédit Agricole", insurer: "Predica", rate: 0.0042 },
   "bnp-paribas": { name: "BNP Paribas", insurer: "Cardif", rate: 0.0045 },
   "societe-generale": { name: "Société Générale", insurer: "Sogecap", rate: 0.0040 },
-  "caisse-epargne": { name: "Caisse d'Épargne", insurer: "CNP", rate: 0.0044 },
+  "caisse-depargne": { name: "Caisse d'Épargne", insurer: "CNP", rate: 0.0044 },
   "credit-mutuel": { name: "Crédit Mutuel", insurer: "ACM", rate: 0.0038 },
   "lcl": { name: "LCL", insurer: "Predica", rate: 0.0043 },
   "banque-postale": { name: "La Banque Postale", insurer: "CNP", rate: 0.0046 },

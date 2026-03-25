@@ -89,7 +89,7 @@ export const BANKS: BankData[] = [
           "Vous devez fournir : le nouveau contrat d'assurance signé, les conditions générales et particulières, un tableau comparatif des garanties (fourni par le nouvel assureur), et une lettre de demande de substitution en recommandé avec AR adressée à votre agence Crédit Agricole.",
       },
     ],
-    relatedBanks: ["lcl", "caisse-epargne", "bnp-paribas"],
+    relatedBanks: ["lcl", "caisse-depargne", "bnp-paribas"],
     relatedProfiles: ["jeune-emprunteur", "fonctionnaire", "primo-accedant"],
   },
 
@@ -161,7 +161,7 @@ export const BANKS: BankData[] = [
   // 3. Caisse d'Épargne
   // -----------------------------------------------------------------------
   {
-    slug: "caisse-epargne",
+    slug: "caisse-depargne",
     name: "Caisse d'Épargne",
     shortName: "CE",
     badgeColor: "#E4002B",
@@ -345,7 +345,7 @@ export const BANKS: BankData[] = [
           "Pour éviter les délais, envoyez votre demande avec un dossier complet (nouveau contrat, conditions générales, tableau d'équivalence des garanties). Relancez par écrit si vous n'avez pas de réponse sous 10 jours ouvrés. Vous pouvez également saisir le médiateur de La Banque Postale en cas de blocage.",
       },
     ],
-    relatedBanks: ["caisse-epargne", "credit-agricole", "banque-populaire"],
+    relatedBanks: ["caisse-depargne", "credit-agricole", "banque-populaire"],
     relatedProfiles: ["primo-accedant", "fonctionnaire", "senior-emprunteur"],
   },
 
@@ -473,7 +473,7 @@ export const BANKS: BankData[] = [
           "Pour un prêt de 200 000 euros sur 20 ans, un emprunteur de 35 ans non-fumeur peut économiser entre 6 000 et 13 000 euros en passant d'un taux groupe de 0,41% à un taux en délégation de 0,10% à 0,15%. Les économies sont d'autant plus importantes que vous êtes jeune et en bonne santé.",
       },
     ],
-    relatedBanks: ["caisse-epargne", "credit-mutuel", "credit-agricole"],
+    relatedBanks: ["caisse-depargne", "credit-mutuel", "credit-agricole"],
     relatedProfiles: ["professionnel-independant", "primo-accedant", "fonctionnaire"],
   },
 
