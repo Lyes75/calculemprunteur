@@ -10,7 +10,7 @@ const COL2_LINKS = [
 
 const COL3_LINKS = [
   { label: "Mentions légales", href: "/mentions-legales" },
-  { label: "Politique de confidentialité", href: "/mentions-legales" },
+  { label: "Politique de confidentialité", href: "/politique-de-confidentialite" },
   { label: "Contact", href: "/contact" },
 ];
 
