@@ -32,7 +32,7 @@ export default function BankRelatedLinks({ bank }: BankRelatedLinksProps) {
                     name={relatedBank.name}
                     shortName={relatedBank.shortName}
                     badgeColor={relatedBank.badgeColor}
-                    size={32}
+                    size={40}
                   />
                   <div>
                     <p className="text-sm font-semibold text-gray-900 leading-tight">

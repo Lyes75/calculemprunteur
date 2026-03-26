@@ -73,7 +73,7 @@ export default function BankRatesGrid() {
                   name={bank.name}
                   shortName={bank.initials}
                   badgeColor={bank.color}
-                  size={40}
+                  size={56}
                 />
                 <div>
                   <h3 className="text-base font-semibold text-gray-900 leading-tight">

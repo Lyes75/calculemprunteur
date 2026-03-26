@@ -8,19 +8,21 @@ interface BankLogoProps {
   name: string;
   shortName: string;
   badgeColor: string;
-  size?: 32 | 40 | 48;
+  size?: 32 | 40 | 48 | 56;
 }
 
 const SIZE_CLASSES: Record<number, string> = {
   32: "w-8 h-8",
   40: "w-10 h-10",
   48: "w-12 h-12",
+  56: "w-14 h-14",
 };
 
 const FONT_CLASSES: Record<number, string> = {
   32: "text-[10px]",
   40: "text-xs",
   48: "text-sm",
+  56: "text-sm",
 };
 
 export default function BankLogo({

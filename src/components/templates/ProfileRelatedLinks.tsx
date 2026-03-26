@@ -57,7 +57,7 @@ export default function ProfileRelatedLinks({
                     name={bank.name}
                     shortName={bank.shortName}
                     badgeColor={bank.badgeColor}
-                    size={32}
+                    size={40}
                   />
                   <div>
                     <p className="text-sm font-semibold text-gray-900 leading-tight">
