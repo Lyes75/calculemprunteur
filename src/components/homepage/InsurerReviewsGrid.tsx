@@ -194,23 +194,19 @@ export default function InsurerReviewsGrid() {
               </ul>
 
               <a
-                href="#"
+                href="#simulateur"
                 className="text-sm text-accent-600 hover:text-accent-500 font-medium transition-colors"
               >
-                Lire l&apos;avis complet →
+                Simuler mon économie →
               </a>
             </div>
           ))}
         </div>
 
-        <div className="text-center fade-up">
-          <a
-            href="#"
-            className="inline-flex items-center text-primary-800 hover:text-primary-700 font-semibold transition-colors text-sm"
-          >
-            Comparer tous les assureurs →
-          </a>
-        </div>
+        <p className="text-xs text-gray-400 text-center mt-4 fade-up">
+          * Taux indicatifs basés sur les offres moyennes du marché.
+          Votre tarif réel dépend de votre profil — utilisez notre simulateur pour un chiffre personnalisé.
+        </p>
       </div>
     </section>
   );
