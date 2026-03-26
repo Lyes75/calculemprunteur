@@ -19,6 +19,8 @@ const LOGO_EXTENSIONS: Record<string, string> = {
   macif: "png",
   swisslife: "png",
   suravenir: "png",
+  metlife: "png",
+  mgen: "png",
 };
 
 export default function InsurerLogo({
