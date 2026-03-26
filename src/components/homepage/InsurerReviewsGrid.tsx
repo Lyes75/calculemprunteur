@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import InsurerLogo from "@/components/ui/InsurerLogo";
 
 const INSURERS = [
   {
@@ -153,17 +154,20 @@ export default function InsurerReviewsGrid() {
               className="fade-up bg-white rounded-xl border border-gray-200 p-5 md:p-6 hover:shadow-md transition-all duration-200"
             >
               <div className="flex items-start justify-between gap-3 mb-3">
-                <div>
-                  <h3 className="text-base font-semibold text-gray-900">
-                    {insurer.name}
-                    {insurer.parent && (
-                      <span className="text-gray-500 font-normal text-sm">
-                        {" "}({insurer.parent})
-                      </span>
-                    )}
-                  </h3>
-                  <div className="mt-1">
-                    <TypeBadge type={insurer.type} />
+                <div className="flex items-center gap-3">
+                  <InsurerLogo slug={insurer.slug} name={insurer.name} size={40} />
+                  <div>
+                    <h3 className="text-base font-semibold text-gray-900">
+                      {insurer.name}
+                      {insurer.parent && (
+                        <span className="text-gray-500 font-normal text-sm">
+                          {" "}({insurer.parent})
+                        </span>
+                      )}
+                    </h3>
+                    <div className="mt-1">
+                      <TypeBadge type={insurer.type} />
+                    </div>
                   </div>
                 </div>
                 <Stars count={insurer.rating} />

@@ -2,6 +2,7 @@
 
 import { formatEuro, formatPercent } from "./utils";
 import type { ScoredInsurer } from "./recommendationEngine";
+import InsurerLogo from "@/components/ui/InsurerLogo";
 
 interface RecommendationCardProps {
   insurer: ScoredInsurer;
@@ -55,10 +56,13 @@ export default function RecommendationCard({
         </span>
       </div>
 
-      {/* Name */}
-      <h4 className="text-lg font-semibold text-gray-900 mb-3">
-        {insurer.name}
-      </h4>
+      {/* Name + logo */}
+      <div className="flex items-center gap-3 mb-3">
+        <InsurerLogo slug={insurer.id} name={insurer.name} size={32} />
+        <h4 className="text-lg font-semibold text-gray-900">
+          {insurer.name}
+        </h4>
+      </div>
 
       {/* Stats */}
       <div className="grid grid-cols-3 gap-3 mb-4">
