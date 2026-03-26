@@ -9,12 +9,10 @@ export default function ProfileCTA({ profile }: ProfileCTAProps) {
     <section className="bg-primary-900 py-16">
       <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-          Simulez votre économie en tant que{" "}
-          {profile.shortName.toLowerCase()}
+          {profile.ctaTitle}
         </h2>
         <p className="text-primary-100 text-base md:text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
-          Découvrez combien vous pouvez économiser avec un profil{" "}
-          {profile.shortName.toLowerCase()}. Simulation gratuite en 2&nbsp;minutes.
+          {profile.ctaSubtitle}
         </p>
         <a
           href="#simulateur"

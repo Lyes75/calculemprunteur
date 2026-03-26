@@ -15,12 +15,12 @@ export default function ProfileAdvantages({ profile }: ProfileAdvantagesProps) {
   }));
 
   return (
-    <section className="bg-gray-50 py-16 md:py-20">
+    <section className="bg-white py-16 md:py-20">
       <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="text-center mb-10">
           <div className="w-10 h-1 bg-accent-600 mx-auto mb-4 rounded-full" />
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-            Défis et avantages pour les {profile.name.toLowerCase()}
+            {profile.advantagesTitle}
           </h2>
         </div>
 

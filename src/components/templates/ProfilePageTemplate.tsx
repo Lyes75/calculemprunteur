@@ -3,8 +3,10 @@ import SavingsCalculator from "@/components/calculator/SavingsCalculator";
 import ProfileBreadcrumb from "./ProfileBreadcrumb";
 import ProfileHero from "./ProfileHero";
 import ProfileContext from "./ProfileContext";
+import ProfileComparison from "./ProfileComparison";
 import ProfileAdvantages from "./ProfileAdvantages";
 import ProfileRecommendations from "./ProfileRecommendations";
+import ProfileSteps from "./ProfileSteps";
 import ProfileFAQ from "./ProfileFAQ";
 import ProfileRelatedLinks from "./ProfileRelatedLinks";
 import ProfileCTA from "./ProfileCTA";
@@ -18,38 +20,44 @@ export default function ProfilePageTemplate({
 }: ProfilePageTemplateProps) {
   return (
     <>
-      {/* Breadcrumb */}
+      {/* 1. Breadcrumb */}
       <ProfileBreadcrumb
         profileName={profile.name}
         profileSlug={profile.slug}
       />
 
-      {/* Hero */}
+      {/* 2. Hero (sans disclaimer) */}
       <ProfileHero profile={profile} />
 
-      {/* Calculator */}
+      {/* 3. Calculator */}
       <section className="bg-gray-50 pb-8 md:pb-12">
         <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
           <SavingsCalculator />
         </div>
       </section>
 
-      {/* Context */}
+      {/* 4. Context éditorial */}
       <ProfileContext profile={profile} />
 
-      {/* Challenges vs Advantages table */}
+      {/* 5. Tableau comparatif chiffré */}
+      <ProfileComparison profile={profile} />
+
+      {/* 6. Défis vs Avantages */}
       <ProfileAdvantages profile={profile} />
 
-      {/* Recommended insurers + switch tips */}
+      {/* 7. Assureurs recommandés + conseil */}
       <ProfileRecommendations profile={profile} />
 
-      {/* FAQ */}
+      {/* 8. Comment changer (3 étapes) */}
+      <ProfileSteps />
+
+      {/* 9. FAQ */}
       <ProfileFAQ profile={profile} />
 
-      {/* Related links */}
+      {/* 10. Maillage interne */}
       <ProfileRelatedLinks profile={profile} />
 
-      {/* Final CTA */}
+      {/* 11. CTA final personnalisé */}
       <ProfileCTA profile={profile} />
     </>
   );

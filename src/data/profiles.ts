@@ -13,6 +13,17 @@ export interface RecommendedInsurer {
   why: string;
 }
 
+export interface ComparisonExample {
+  scenario: string;
+  groupRate: string;
+  groupMonthly: string;
+  groupTotal: string;
+  delegRate: string;
+  delegMonthly: string;
+  delegTotal: string;
+  savings: string;
+}
+
 export interface ProfileData {
   slug: string;
   name: string;
@@ -28,12 +39,18 @@ export interface ProfileData {
   contextTitle: string;
   contextText: string;
 
+  comparisonExample: ComparisonExample;
+
+  advantagesTitle: string;
   specificChallenges: string[];
   specificAdvantages: string[];
 
   recommendedInsurers: RecommendedInsurer[];
 
   switchTips: string;
+
+  ctaTitle: string;
+  ctaSubtitle: string;
 
   faq: ProfileFAQ[];
 
@@ -69,6 +86,14 @@ export const PROFILES: ProfileData[] = [
     contextText:
       "L'âge est le premier facteur de tarification de l'assurance emprunteur. Après 60 ans, les contrats groupe bancaires appliquent des taux qui peuvent dépasser 0,80% à 1,20% du capital emprunté, contre 0,30% à 0,45% pour un emprunteur de 35 ans. Cette différence s'explique par la mutualisation : le contrat groupe ne distingue pas les profils, mais les assureurs internes ajustent les barèmes par tranche d'âge.\n\nEn délégation d'assurance, la situation est très différente. Les assureurs individuels proposent des tarifs personnalisés qui tiennent compte de votre état de santé réel, pas seulement de votre âge. Un senior de 62 ans en bonne santé, non-fumeur, peut obtenir un taux de 0,35% à 0,55% en délégation — soit 30 à 50% de moins que le contrat groupe.\n\nLa loi Lemoine s'applique pleinement aux seniors : vous pouvez changer d'assurance emprunteur à tout moment, sans frais, quel que soit votre âge. Il n'y a pas de limite d'âge pour exercer ce droit.\n\nAttention toutefois : certains contrats en délégation fixent un âge limite de souscription (70 ou 75 ans selon les assureurs) ou un âge limite de couverture (80 ou 85 ans). Vérifiez ces limites avant de souscrire.",
 
+    comparisonExample: {
+      scenario: "Senior 62 ans, non-fumeur, prêt de 150 000\u00a0\u20ac sur 12 ans",
+      groupRate: "0,95\u00a0%", groupMonthly: "119\u00a0\u20ac", groupTotal: "17 100\u00a0\u20ac",
+      delegRate: "0,42\u00a0%", delegMonthly: "53\u00a0\u20ac", delegTotal: "7 560\u00a0\u20ac",
+      savings: "9 540\u00a0\u20ac",
+    },
+
+    advantagesTitle: "Défis et avantages pour les seniors",
     specificChallenges: [
       "Les taux d'assurance groupe augmentent fortement après 60 ans (0,80% à 1,20% vs 0,35% à 35 ans)",
       "Le questionnaire médical est plus détaillé et peut entraîner des exclusions ou surprimes",
@@ -101,6 +126,9 @@ export const PROFILES: ProfileData[] = [
 
     switchTips:
       "En tant que senior, demandez systématiquement à votre nouvel assureur les limites d'âge de couverture (pas seulement de souscription). Vérifiez aussi les conditions de maintien des garanties ITT/IPT après 65 ans — certains contrats les suppriment automatiquement à cet âge. Privilégiez les contrats qui maintiennent au minimum les garanties décès et PTIA sans limite d'âge.",
+
+    ctaTitle: "Senior : simulez votre économie en assurance emprunteur",
+    ctaSubtitle: "Découvrez combien vous pouvez économiser après 60 ans. Simulation gratuite en 2\u00a0minutes.",
 
     faq: [
       {
@@ -161,12 +189,19 @@ export const PROFILES: ProfileData[] = [
     contextText:
       "Si vous avez ou avez eu un problème de santé grave, l'assurance emprunteur peut sembler être un obstacle insurmontable. Surprimes, exclusions de garanties, refus de couverture : les difficultés sont réelles mais pas insurmontables grâce à deux dispositifs légaux majeurs.\n\nLa convention AERAS (S'Assurer et Emprunter avec un Risque Aggravé de Santé) oblige les assureurs à examiner votre dossier à trois niveaux successifs avant de prononcer un refus définitif. Elle plafonne également les surprimes à 1,4 point au-dessus du taux standard pour les revenus modestes.\n\nLe droit à l'oubli, renforcé par la loi Lemoine (2022), vous dispense de déclarer certaines pathologies après un délai de 5 ans sans rechute. Cela concerne notamment les cancers, l'hépatite C et d'autres pathologies listées dans une grille de référence régulièrement mise à jour.\n\nEn pratique, les assureurs en délégation sont souvent plus souples que les contrats groupe bancaires pour les risques aggravés. Certains (April, MetLife) sont spécialisés dans l'étude de ces profils et proposent des couvertures adaptées à des tarifs compétitifs.\n\nLa suppression du questionnaire médical (loi Lemoine) pour les prêts de moins de 200 000€ remboursés avant 60 ans est une avancée majeure pour les personnes avec un risque de santé.",
 
+    comparisonExample: {
+      scenario: "Emprunteur 45 ans, diabète type 2 stabilisé, prêt de 200 000\u00a0\u20ac sur 20 ans",
+      groupRate: "0,55\u00a0%", groupMonthly: "92\u00a0\u20ac", groupTotal: "22 000\u00a0\u20ac",
+      delegRate: "0,28\u00a0%", delegMonthly: "47\u00a0\u20ac", delegTotal: "11 200\u00a0\u20ac",
+      savings: "10 800\u00a0\u20ac",
+    },
+
+    advantagesTitle: "Défis et avantages pour les emprunteurs avec un risque aggravé",
     specificChallenges: [
       "Les surprimes peuvent atteindre 100 à 300% du tarif standard selon la pathologie",
       "Certaines garanties (ITT, IPT) peuvent être exclues pour la pathologie déclarée",
       "Le questionnaire médical est plus détaillé et peut nécessiter des examens complémentaires",
       "Les délais de traitement du dossier sont plus longs (2 à 6 semaines vs quelques jours)",
-      "Le refus d'un premier assureur ne signifie pas refus de tous — il faut comparer",
     ],
 
     specificAdvantages: [
@@ -193,6 +228,9 @@ export const PROFILES: ProfileData[] = [
 
     switchTips:
       "Si vous avez un risque aggravé de santé, ne vous contentez pas d'un seul devis. Les grilles médicales varient énormément d'un assureur à l'autre — une pathologie qui entraîne une surprime de 200% chez l'un peut n'entraîner que 50% chez un autre. Faites au minimum 3 demandes. Et vérifiez si votre pathologie est couverte par le droit à l'oubli avant de remplir le questionnaire médical.",
+
+    ctaTitle: "Risque aggravé : découvrez vos options en assurance emprunteur",
+    ctaSubtitle: "Convention AERAS, droit à l'oubli, suppression du questionnaire : simulez votre économie.",
 
     faq: [
       {
@@ -253,12 +291,20 @@ export const PROFILES: ProfileData[] = [
     contextTitle:
       "Professions à risque et assurance emprunteur : ce qui change",
     contextText:
-      "Les assureurs classent les professions en catégories de risque. Les métiers comportant un danger physique (forces de l'ordre, militaires, pompiers, marins, BTP), une exposition à des matières dangereuses (chimie, nucléaire), ou des déplacements fréquents (pilotes, routiers) entraînent des surprimes qui peuvent aller de 25% à 200% du tarif standard.\n\nEn contrat groupe bancaire, ces surprimes sont souvent absorbées dans le taux mutualisé — ce qui veut dire que vous ne les voyez pas directement. Mais le taux de base est déjà élevé (0,38% à 0,46%). En délégation, la surprime est visible mais appliquée sur un taux de base bien plus bas (0,10% à 0,15%). Résultat : même avec une surprime de 50%, le contrat en délégation reste souvent moins cher que le contrat groupe.\n\nCertaines professions bénéficient de mutuelles spécialisées qui proposent des contrats emprunteur dédiés : la GMF pour les fonctionnaires de police, la MNM pour les marins, la MGEN pour les enseignants. Ces contrats méritent d'être comparés avec les offres en délégation.\n\nLa loi Lemoine s'applique indépendamment de votre profession — vous pouvez changer d'assurance à tout moment.",
+      "Les assureurs classent les professions en catégories de risque. Les métiers comportant un danger physique (forces de l'ordre, militaires, pompiers, marins, BTP), une exposition à des matières dangereuses (chimie, nucléaire), ou des déplacements fréquents (pilotes, routiers) entraînent des surprimes qui peuvent aller de 25% à 200% du tarif standard.\n\nEn contrat groupe bancaire, ces surprimes sont souvent absorbées dans le taux mutualisé — ce qui veut dire que vous ne les voyez pas directement. Mais le taux de base est déjà élevé (0,38% à 0,46%). En délégation, la surprime est visible mais appliquée sur un taux de base bien plus bas (0,10% à 0,15%). Résultat : même avec une surprime de 50%, le contrat en délégation reste souvent moins cher que le contrat groupe.\n\nLes sports à risque pratiqués en loisir (parachutisme, plongée sous-marine, escalade, sports de combat) sont aussi concernés, même si votre profession est classique. Les assureurs distinguent la pratique professionnelle de la pratique amateur, mais les deux entraînent des surprimes.\n\nCertaines professions bénéficient de mutuelles spécialisées qui proposent des contrats emprunteur dédiés : la GMF pour les fonctionnaires de police, la MNM pour les marins, la MGEN pour les enseignants. Ces contrats méritent d'être comparés avec les offres en délégation.\n\nLa loi Lemoine s'applique indépendamment de votre profession — vous pouvez changer d'assurance à tout moment.",
 
+    comparisonExample: {
+      scenario: "Pompier 38 ans, non-fumeur, prêt de 250 000\u00a0\u20ac sur 20 ans",
+      groupRate: "0,44\u00a0%", groupMonthly: "92\u00a0\u20ac", groupTotal: "22 000\u00a0\u20ac",
+      delegRate: "0,18\u00a0%", delegMonthly: "38\u00a0\u20ac", delegTotal: "9 000\u00a0\u20ac",
+      savings: "13 000\u00a0\u20ac",
+    },
+
+    advantagesTitle: "Défis et avantages pour les professions à risque",
     specificChallenges: [
       "Les surprimes professionnelles peuvent atteindre 25% à 200% du tarif standard",
       "Certaines activités professionnelles sont exclues des garanties ITT/IPT (interventions militaires, missions en zone de conflit)",
-      "Les sports pratiqués dans le cadre professionnel (parachutisme, plongée) sont parfois doublement pénalisés",
+      "Les sports à risque en loisir (parachutisme, plongée, escalade) entraînent aussi des surprimes, même avec une profession classique",
       "Le changement de profession en cours de contrat peut modifier les conditions",
     ],
 
@@ -286,6 +332,9 @@ export const PROFILES: ProfileData[] = [
 
     switchTips:
       "Vérifiez précisément la liste des professions à risque chez chaque assureur — elle varie considérablement. Un pompier peut avoir une surprime de 100% chez un assureur et seulement 25% chez un autre. Demandez aussi si les activités sportives liées à votre profession (parachutisme pour les militaires, plongée pour les marins) sont couvertes ou exclues.",
+
+    ctaTitle: "Profession à risque : comparez les assurances emprunteur adaptées",
+    ctaSubtitle: "Surprimes, exclusions, couvertures spécialisées : simulez votre économie en 2\u00a0minutes.",
 
     faq: [
       {
@@ -342,8 +391,16 @@ export const PROFILES: ProfileData[] = [
     contextTitle:
       "Pourquoi les fonctionnaires paient moins cher leur assurance emprunteur",
     contextText:
-      "Le statut de fonctionnaire est l'un des profils les plus favorables en assurance emprunteur. La raison est simple : la sécurité de l'emploi réduit considérablement le risque de défaut de paiement. Les assureurs en tiennent compte dans leur tarification.\n\nEn contrat groupe bancaire, cet avantage n'apparaît pas — le taux est mutualisé et identique quel que soit votre statut professionnel. Un fonctionnaire titulaire paie le même taux qu'un intérimaire chez la même banque. C'est en délégation que la différence se fait sentir.\n\nLes fonctionnaires bénéficient aussi de mutuelles spécialisées qui proposent des contrats emprunteur dédiés : la MGEN (Éducation nationale), la MNH (hospitaliers), la MAIF, la GMF. Ces contrats sont souvent compétitifs mais ne sont pas toujours les moins chers — comparez-les systématiquement avec les offres en délégation.\n\nUn avantage spécifique des fonctionnaires : le maintien de salaire en cas d'arrêt maladie (3 mois à plein traitement, 9 mois à demi-traitement pour les titulaires) permet de supporter un délai de franchise ITT plus long (90 jours) et donc de réduire le coût de cette garantie.",
+      "Le statut de fonctionnaire est l'un des profils les plus favorables en assurance emprunteur. La raison est simple : la sécurité de l'emploi réduit considérablement le risque de défaut de paiement. Les assureurs en tiennent compte dans leur tarification.\n\nEn contrat groupe bancaire, cet avantage n'apparaît pas — le taux est mutualisé et identique quel que soit votre statut professionnel. Un fonctionnaire titulaire paie le même taux qu'un intérimaire chez la même banque. C'est en délégation que la différence se fait sentir.\n\nLes fonctionnaires bénéficient aussi de mutuelles spécialisées qui proposent des contrats emprunteur dédiés : la MGEN (Éducation nationale), la MNH (hospitaliers), la MAIF, la GMF. Ces contrats sont souvent compétitifs mais ne sont pas toujours les moins chers — comparez-les systématiquement avec les offres en délégation.\n\nUn avantage spécifique des fonctionnaires : le maintien de salaire en cas d'arrêt maladie (3 mois à plein traitement, 9 mois à demi-traitement pour les titulaires) permet de supporter un délai de franchise ITT plus long (90 jours) et donc de réduire le coût de cette garantie.\n\nPrécision importante : les avantages décrits ici concernent principalement les fonctionnaires titulaires. Les contractuels et stagiaires bénéficient d'un statut moins protecteur (maintien de salaire plus court, pas de garantie d'emploi), mais restent avantagés par rapport au secteur privé en délégation.",
 
+    comparisonExample: {
+      scenario: "Enseignant 35 ans, non-fumeur, prêt de 220 000\u00a0\u20ac sur 20 ans",
+      groupRate: "0,42\u00a0%", groupMonthly: "77\u00a0\u20ac", groupTotal: "18 480\u00a0\u20ac",
+      delegRate: "0,11\u00a0%", delegMonthly: "20\u00a0\u20ac", delegTotal: "4 840\u00a0\u20ac",
+      savings: "13 640\u00a0\u20ac",
+    },
+
+    advantagesTitle: "Défis et avantages pour les fonctionnaires",
     specificChallenges: [
       "Le contrat groupe bancaire ne tient pas compte de la sécurité de l'emploi — vous payez le même taux que tout le monde",
       "Les mutuelles de la fonction publique ne sont pas toujours les moins chères malgré leur réputation",
@@ -375,6 +432,9 @@ export const PROFILES: ProfileData[] = [
 
     switchTips:
       "En tant que fonctionnaire, vous avez le profil idéal pour la délégation d'assurance. Demandez un devis en précisant votre statut (titulaire, contractuel, stagiaire) et votre maintien de salaire. Si vous êtes hospitalier (PH, infirmier), vérifiez la définition ITT — optez pour la définition 'professionnelle' (incapacité à exercer votre profession) plutôt que 'fonctionnelle'.",
+
+    ctaTitle: "Fonctionnaire : profitez des meilleurs taux en assurance emprunteur",
+    ctaSubtitle: "Votre statut vous avantage en délégation. Simulez votre économie gratuitement.",
 
     faq: [
       {
@@ -437,6 +497,14 @@ export const PROFILES: ProfileData[] = [
     contextText:
       "L'assurance emprunteur d'un prêt immobilier locatif présente des spécificités importantes par rapport à un prêt pour la résidence principale.\n\nPremière différence : les garanties exigées par la banque sont souvent réduites. Pour un investissement locatif, la plupart des banques n'exigent que les garanties décès et PTIA, sans les garanties ITT et IPT qui sont obligatoires pour une résidence principale. Cela réduit mécaniquement le coût de l'assurance.\n\nDeuxième différence : la quotité peut être optimisée. Pour un couple qui investit, une répartition 50/50 au lieu de 100/100 divise le coût de l'assurance par deux tout en maintenant une couverture suffisante (les loyers couvrent une partie des mensualités).\n\nTroisième différence : les primes d'assurance emprunteur sont déductibles des revenus fonciers en location nue, ou déductibles en charges en LMNP au régime réel. C'est un avantage fiscal que les propriétaires de résidence principale n'ont pas.\n\nCes trois leviers combinés peuvent réduire le coût réel de votre assurance emprunteur de 40 à 60% par rapport à une résidence principale.",
 
+    comparisonExample: {
+      scenario: "Investisseur 40 ans, prêt locatif 200 000\u00a0\u20ac sur 20 ans, décès + PTIA seuls",
+      groupRate: "0,42\u00a0%", groupMonthly: "70\u00a0\u20ac", groupTotal: "16 800\u00a0\u20ac",
+      delegRate: "0,08\u00a0%", delegMonthly: "13\u00a0\u20ac", delegTotal: "3 200\u00a0\u20ac",
+      savings: "13 600\u00a0\u20ac",
+    },
+
+    advantagesTitle: "Défis et avantages pour l'investissement locatif",
     specificChallenges: [
       "Les banques exigent parfois les mêmes garanties que pour une résidence principale (ITT/IPT), même si ce n'est pas justifié",
       "La quotité optimale dépend de votre situation patrimoniale globale, pas seulement de ce prêt",
@@ -468,6 +536,9 @@ export const PROFILES: ProfileData[] = [
 
     switchTips:
       "Pour un investissement locatif, négociez la réduction des garanties à décès + PTIA uniquement (pas d'ITT/IPT). Si votre banque refuse, demandez-le par écrit — dans la majorité des cas, c'est négociable. Et n'oubliez pas de déduire vos primes d'assurance de vos revenus fonciers ou BIC (LMNP réel).",
+
+    ctaTitle: "Investissement locatif : optimisez votre assurance emprunteur",
+    ctaSubtitle: "Quotité, garanties réduites, déductibilité fiscale : simulez votre économie.",
 
     faq: [
       {
@@ -526,6 +597,14 @@ export const PROFILES: ProfileData[] = [
     contextText:
       "L'assurance emprunteur pour un expatrié est plus complexe que pour un résident français. Le pays de résidence, la zone géographique, les conditions sanitaires locales et le système de santé du pays d'accueil sont autant de facteurs qui influencent la tarification et les garanties.\n\nLes contrats groupe bancaires acceptent rarement les expatriés, ou avec des surprimes importantes. Les assureurs en délégation spécialisés (April International, Generali, AXA) sont souvent la seule option viable — et paradoxalement, ils peuvent être moins chers que le contrat groupe.\n\nLes zones géographiques sont classées en catégories de risque : l'Europe et l'Amérique du Nord sont généralement en zone 1 (sans surprime), l'Asie du Sud-Est et l'Amérique latine en zone 2 (surprime modérée), l'Afrique subsaharienne et le Moyen-Orient en zone 3 (surprime élevée ou refus).\n\nLa loi Lemoine s'applique aux prêts immobiliers souscrits en France, quel que soit le lieu de résidence de l'emprunteur. Vous pouvez donc changer d'assurance depuis l'étranger.",
 
+    comparisonExample: {
+      scenario: "Expatrié 38 ans (zone Europe), prêt de 300 000\u00a0\u20ac sur 20 ans",
+      groupRate: "0,50\u00a0%", groupMonthly: "125\u00a0\u20ac", groupTotal: "30 000\u00a0\u20ac",
+      delegRate: "0,16\u00a0%", delegMonthly: "40\u00a0\u20ac", delegTotal: "9 600\u00a0\u20ac",
+      savings: "20 400\u00a0\u20ac",
+    },
+
+    advantagesTitle: "Défis et avantages pour les expatriés",
     specificChallenges: [
       "Les contrats groupe bancaires acceptent rarement les expatriés ou appliquent des surprimes élevées",
       "Le pays de résidence détermine le niveau de surprime (zone 1, 2 ou 3)",
@@ -558,6 +637,9 @@ export const PROFILES: ProfileData[] = [
 
     switchTips:
       "En tant qu'expatrié, précisez toujours votre pays de résidence dès le premier contact avec l'assureur. Certains pays entraînent un refus automatique — inutile de perdre du temps. Vérifiez aussi les conditions de rapatriement en cas de sinistre et la devise de remboursement (euros ou devise locale). Si vous prévoyez de revenir en France, certains contrats permettent un ajustement de tarif à votre retour.",
+
+    ctaTitle: "Expatrié : trouvez une assurance emprunteur adaptée",
+    ctaSubtitle: "Couverture internationale, souscription à distance : simulez votre économie.",
 
     faq: [
       {
@@ -618,8 +700,16 @@ export const PROFILES: ProfileData[] = [
     contextTitle:
       "Suppression du questionnaire médical : ce que prévoit la loi Lemoine",
     contextText:
-      "La loi Lemoine a introduit une avancée majeure : la suppression du questionnaire de santé pour certains emprunteurs. Concrètement, vous n'avez plus à répondre à aucune question sur votre état de santé si vous remplissez deux conditions cumulatives.\n\nPremière condition : la part du prêt assurée par chaque emprunteur ne dépasse pas 200 000€. Attention, c'est la part assurée, pas le montant total du prêt. Pour un couple empruntant 400 000€ à quotité 50/50, chaque part est de 200 000€ — la condition est remplie. Pour un emprunteur seul à 250 000€, elle ne l'est pas.\n\nDeuxième condition : le prêt est intégralement remboursé avant le 60ème anniversaire de l'emprunteur. Un emprunteur de 38 ans qui prend un prêt sur 20 ans (remboursé à 58 ans) est éligible. Un emprunteur de 42 ans avec le même prêt (remboursé à 62 ans) ne l'est pas.\n\nCette suppression s'applique à la souscription initiale ET au changement d'assurance. Si vous remplissez les conditions, vous pouvez changer d'assurance sans aucune question de santé — c'est un avantage considérable pour les personnes ayant des antécédents médicaux.",
+      "La loi Lemoine a introduit une avancée majeure : la suppression du questionnaire de santé pour certains emprunteurs. Concrètement, vous n'avez plus à répondre à aucune question sur votre état de santé si vous remplissez deux conditions cumulatives.\n\nPremière condition : la part du prêt assurée par chaque emprunteur ne dépasse pas 200 000€. Attention, c'est la part assurée par emprunteur, pas le montant total du prêt. Pour un couple empruntant 400 000€ à quotité 50/50, chaque part est de 200 000€ — la condition est remplie. Pour un emprunteur seul à 250 000€, elle ne l'est pas.\n\nDeuxième condition : le prêt est intégralement remboursé avant le 60ème anniversaire de l'emprunteur. Un emprunteur de 38 ans qui prend un prêt sur 20 ans (remboursé à 58 ans) est éligible. Un emprunteur de 42 ans avec le même prêt (remboursé à 62 ans) ne l'est pas.\n\nCette suppression s'applique à la souscription initiale ET au changement d'assurance. Si vous remplissez les conditions, vous pouvez changer d'assurance sans aucune question de santé — c'est un avantage considérable pour les personnes ayant des antécédents médicaux.",
 
+    comparisonExample: {
+      scenario: "Emprunteur 32 ans, prêt de 180 000\u00a0\u20ac sur 25 ans (remboursé à 57 ans)",
+      groupRate: "0,40\u00a0%", groupMonthly: "60\u00a0\u20ac", groupTotal: "18 000\u00a0\u20ac",
+      delegRate: "0,09\u00a0%", delegMonthly: "14\u00a0\u20ac", delegTotal: "4 050\u00a0\u20ac",
+      savings: "13 950\u00a0\u20ac",
+    },
+
+    advantagesTitle: "Défis et avantages de la suppression du questionnaire médical",
     specificChallenges: [
       "Les conditions sont cumulatives : < 200 000€ de part assurée ET remboursé avant 60 ans",
       "Le seuil de 200 000€ s'apprécie par emprunteur, pas par prêt — un couple peut emprunter 400 000€ à 50/50",
@@ -651,6 +741,9 @@ export const PROFILES: ProfileData[] = [
 
     switchTips:
       "Si vous êtes éligible à la suppression du questionnaire médical, assurez-vous que l'assureur ne vous pose aucune question de santé — c'est interdit par la loi. Si un assureur vous demande de remplir un questionnaire alors que vous remplissez les conditions (< 200 000€ par tête, remboursé avant 60 ans), signalez-le et changez d'assureur. C'est une infraction à la loi Lemoine.",
+
+    ctaTitle: "Sans questionnaire médical : changez d'assurance emprunteur simplement",
+    ctaSubtitle: "Éligible à la loi Lemoine ? Simulez votre économie sans déclarer votre santé.",
 
     faq: [
       {
@@ -709,6 +802,14 @@ export const PROFILES: ProfileData[] = [
     contextText:
       "Entre 25 et 35 ans, non-fumeur, en bonne santé : c'est le profil d'emprunteur le plus favorable pour l'assurance emprunteur. Et c'est aussi celui qui est le plus pénalisé par le contrat groupe de la banque.\n\nEn contrat groupe, vous payez un taux mutualisé (0,38% à 0,46%) identique à celui d'un emprunteur de 55 ans fumeur. Le contrat groupe ne tient pas compte de votre jeune âge ni de votre bonne santé. C'est structurellement injuste — vous subventionnez les profils plus risqués.\n\nEn délégation, les taux pour un jeune emprunteur de 25-35 ans non-fumeur démarrent à 0,08% et plafonnent à 0,15%. Sur un prêt de 200 000€ sur 20 ans, c'est une différence de 10 000 à 15 000€. C'est la plus grosse économie possible parmi tous les profils.\n\nDe plus, si votre prêt est inférieur à 200 000€ et remboursé avant 60 ans (ce qui est le cas de la majorité des primo-accédants), vous bénéficiez de la suppression du questionnaire médical — la souscription est ultra-rapide.\n\nLe piège le plus fréquent : signer le contrat groupe de la banque 'pour aller plus vite' lors de l'achat immobilier, puis ne jamais changer. La loi Lemoine vous permet de corriger cette erreur à tout moment.",
 
+    comparisonExample: {
+      scenario: "Primo-accédant 28 ans, non-fumeur, prêt de 200 000\u00a0\u20ac sur 25 ans",
+      groupRate: "0,42\u00a0%", groupMonthly: "70\u00a0\u20ac", groupTotal: "21 000\u00a0\u20ac",
+      delegRate: "0,08\u00a0%", delegMonthly: "13\u00a0\u20ac", delegTotal: "4 000\u00a0\u20ac",
+      savings: "17 000\u00a0\u20ac",
+    },
+
+    advantagesTitle: "Défis et avantages pour les jeunes emprunteurs",
     specificChallenges: [
       "Le contrat groupe bancaire ne tient pas compte de votre jeune âge — vous payez le même taux que tout le monde",
       "Le réflexe du 'package' : signer l'assurance de la banque avec le prêt pour simplifier l'achat",
@@ -740,6 +841,9 @@ export const PROFILES: ProfileData[] = [
 
     switchTips:
       "En tant que jeune emprunteur, vous avez le profil idéal pour négocier. Demandez au minimum 3 devis et jouez la concurrence. Le changement est gratuit, immédiat, et l'économie est la plus importante de tous les profils. Si vous avez signé le contrat groupe il y a quelques mois, changez maintenant — chaque mois qui passe, c'est 30 à 50€ de trop.",
+
+    ctaTitle: "25-35 ans : vous payez votre assurance emprunteur 3 à 4 fois trop cher",
+    ctaSubtitle: "Taux dès 0,08% en délégation. Simulez votre économie en 2\u00a0minutes.",
 
     faq: [
       {

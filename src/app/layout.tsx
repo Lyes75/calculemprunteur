@@ -4,8 +4,10 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title:
-    "Changement d'Assurance Emprunteur | Simulez vos Économies",
+  title: {
+    default: "Changement d'Assurance Emprunteur | Simulez vos Économies",
+    template: "%s",
+  },
   description:
     "Changement d'assurance emprunteur : simulez gratuitement vos économies en changeant d'assurance de prêt immobilier (loi Lemoine). Comparez les taux par banque et recevez 3 devis personnalisés sans engagement.",
   metadataBase: new URL("https://www.calculemprunteur.fr"),

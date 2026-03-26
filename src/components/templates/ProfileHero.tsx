@@ -15,10 +15,6 @@ export default function ProfileHero({ profile }: ProfileHeroProps) {
         <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto text-center">
           {profile.heroSubtitle}
         </p>
-        <p className="text-xs text-gray-400 mt-2 max-w-xl mx-auto text-center">
-          * Taux indicatifs basés sur les offres moyennes du marché pour ce
-          profil. Votre tarif réel dépend de votre situation personnelle.
-        </p>
       </div>
     </section>
   );
