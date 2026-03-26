@@ -82,6 +82,10 @@ export default function Footer() {
         {/* Copyright */}
         <div className="border-t border-primary-900 pt-6 mt-8 text-gray-500 text-sm text-center">
           © 2026 CalculEmprunteur.fr — Simulation indicative, non contractuelle.
+          <p className="text-xs text-gray-600 mt-2">
+            Les marques et logos cités appartiennent à leurs propriétaires respectifs.
+            CalculEmprunteur.fr n&apos;est pas affilié aux établissements bancaires mentionnés.
+          </p>
         </div>
       </div>
     </footer>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import BankLogo from "@/components/ui/BankLogo";
 
 const BANKS = [
   { name: "Crédit Agricole", insurer: "Predica", rate: 0.42, slug: "credit-agricole", initials: "CA", color: "#006A4E" },
@@ -67,12 +68,13 @@ export default function BankRatesGrid() {
               className="fade-up bg-white rounded-xl border border-gray-200 p-5 hover:shadow-md hover:border-primary-200 transition-all duration-200"
             >
               <div className="flex items-center gap-3 mb-3">
-                <div
-                  className="w-10 h-10 rounded-full flex items-center justify-center text-white text-xs font-bold shrink-0"
-                  style={{ backgroundColor: bank.color }}
-                >
-                  {bank.initials}
-                </div>
+                <BankLogo
+                  slug={bank.slug}
+                  name={bank.name}
+                  shortName={bank.initials}
+                  badgeColor={bank.color}
+                  size={40}
+                />
                 <div>
                   <h3 className="text-base font-semibold text-gray-900 leading-tight">
                     {bank.name}

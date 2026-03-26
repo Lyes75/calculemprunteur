@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { BankData } from "@/data/banks";
 import { BANKS } from "@/data/banks";
 import { PROFILE_LABELS } from "@/data/profiles";
+import BankLogo from "@/components/ui/BankLogo";
 
 interface BankRelatedLinksProps {
   bank: BankData;
@@ -26,12 +27,13 @@ export default function BankRelatedLinks({ bank }: BankRelatedLinksProps) {
                 className="bg-white rounded-xl border border-gray-200 p-4 hover:shadow-md hover:border-primary-200 transition-all duration-200"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <div
-                    className="w-9 h-9 rounded-full flex items-center justify-center text-white text-xs font-bold shrink-0"
-                    style={{ backgroundColor: relatedBank.badgeColor }}
-                  >
-                    {relatedBank.shortName}
-                  </div>
+                  <BankLogo
+                    slug={relatedBank.slug}
+                    name={relatedBank.name}
+                    shortName={relatedBank.shortName}
+                    badgeColor={relatedBank.badgeColor}
+                    size={32}
+                  />
                   <div>
                     <p className="text-sm font-semibold text-gray-900 leading-tight">
                       {relatedBank.name}

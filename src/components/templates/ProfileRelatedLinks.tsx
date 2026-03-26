@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ProfileData } from "@/data/profiles";
 import { PROFILES, PROFILE_LABELS } from "@/data/profiles";
 import { BANKS } from "@/data/banks";
+import BankLogo from "@/components/ui/BankLogo";
 
 interface ProfileRelatedLinksProps {
   profile: ProfileData;
@@ -51,12 +52,13 @@ export default function ProfileRelatedLinks({
                 className="bg-white rounded-xl border border-gray-200 p-4 hover:shadow-md hover:border-primary-200 transition-all duration-200"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <div
-                    className="w-9 h-9 rounded-full flex items-center justify-center text-white text-xs font-bold shrink-0"
-                    style={{ backgroundColor: bank.badgeColor }}
-                  >
-                    {bank.shortName}
-                  </div>
+                  <BankLogo
+                    slug={bank.slug}
+                    name={bank.name}
+                    shortName={bank.shortName}
+                    badgeColor={bank.badgeColor}
+                    size={32}
+                  />
                   <div>
                     <p className="text-sm font-semibold text-gray-900 leading-tight">
                       {bank.name}
