@@ -143,7 +143,7 @@ export default function ProfileCards() {
                 {profile.description}
               </p>
               <a
-                href="#"
+                href={`/assurance-emprunteur-${profile.slug}`}
                 className="text-sm text-accent-600 hover:text-accent-500 font-medium transition-colors"
               >
                 En savoir plus →

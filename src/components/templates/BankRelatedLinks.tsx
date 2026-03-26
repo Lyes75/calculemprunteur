@@ -1,22 +1,11 @@
 import Link from "next/link";
 import type { BankData } from "@/data/banks";
 import { BANKS } from "@/data/banks";
+import { PROFILE_LABELS } from "@/data/profiles";
 
 interface BankRelatedLinksProps {
   bank: BankData;
 }
-
-const PROFILE_LABELS: Record<string, string> = {
-  "senior": "Senior (60+)",
-  "jeune-emprunteur": "Jeune emprunteur",
-  "fonctionnaire": "Fonctionnaire",
-  "risque-aggrave": "Risque aggrav\u00e9",
-  "investissement-locatif": "Investissement locatif",
-  "expatrie": "Expatri\u00e9",
-  "sans-questionnaire-medical": "Sans questionnaire m\u00e9dical",
-  "profession-risque": "Profession \u00e0 risque",
-  "sci": "SCI",
-};
 
 export default function BankRelatedLinks({ bank }: BankRelatedLinksProps) {
   const relatedBanks = BANKS.filter((b) => b.slug !== bank.slug).slice(0, 4);
@@ -70,13 +59,13 @@ export default function BankRelatedLinks({ bank }: BankRelatedLinksProps) {
           </h3>
           <div className="flex flex-wrap justify-center gap-2">
             {bank.relatedProfiles.map((slug) => (
-              <a
+              <Link
                 key={slug}
-                href="/#simulateur"
+                href={`/assurance-emprunteur-${slug}`}
                 className="inline-block text-sm text-gray-600 bg-gray-100 hover:bg-primary-50 hover:text-primary-800 rounded-full px-4 py-1.5 transition-colors"
               >
                 {PROFILE_LABELS[slug] || slug}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

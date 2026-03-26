@@ -90,7 +90,7 @@ export const BANKS: BankData[] = [
       },
     ],
     relatedBanks: ["lcl", "caisse-depargne", "bnp-paribas"],
-    relatedProfiles: ["jeune-emprunteur", "fonctionnaire", "primo-accedant"],
+    relatedProfiles: ["jeune-emprunteur", "fonctionnaire", "sans-questionnaire-medical"],
   },
 
   // -----------------------------------------------------------------------
@@ -154,7 +154,7 @@ export const BANKS: BankData[] = [
       },
     ],
     relatedBanks: ["societe-generale", "credit-agricole", "lcl"],
-    relatedProfiles: ["cadre-superieur", "investisseur-locatif", "jeune-emprunteur"],
+    relatedProfiles: ["fonctionnaire", "investissement-locatif", "jeune-emprunteur"],
   },
 
   // -----------------------------------------------------------------------
@@ -218,7 +218,7 @@ export const BANKS: BankData[] = [
       },
     ],
     relatedBanks: ["banque-populaire", "banque-postale", "credit-agricole"],
-    relatedProfiles: ["primo-accedant", "fonctionnaire", "senior-emprunteur"],
+    relatedProfiles: ["jeune-emprunteur", "fonctionnaire", "senior"],
   },
 
   // -----------------------------------------------------------------------
@@ -282,7 +282,7 @@ export const BANKS: BankData[] = [
       },
     ],
     relatedBanks: ["credit-agricole", "bnp-paribas", "societe-generale"],
-    relatedProfiles: ["jeune-emprunteur", "cadre-superieur", "primo-accedant"],
+    relatedProfiles: ["jeune-emprunteur", "fonctionnaire", "sans-questionnaire-medical"],
   },
 
   // -----------------------------------------------------------------------
@@ -346,7 +346,7 @@ export const BANKS: BankData[] = [
       },
     ],
     relatedBanks: ["caisse-depargne", "credit-agricole", "banque-populaire"],
-    relatedProfiles: ["primo-accedant", "fonctionnaire", "senior-emprunteur"],
+    relatedProfiles: ["jeune-emprunteur", "fonctionnaire", "senior"],
   },
 
   // -----------------------------------------------------------------------
@@ -410,7 +410,7 @@ export const BANKS: BankData[] = [
       },
     ],
     relatedBanks: ["bnp-paribas", "lcl", "credit-mutuel"],
-    relatedProfiles: ["cadre-superieur", "investisseur-locatif", "jeune-emprunteur"],
+    relatedProfiles: ["expatrie", "investissement-locatif", "jeune-emprunteur"],
   },
 
   // -----------------------------------------------------------------------
@@ -474,7 +474,7 @@ export const BANKS: BankData[] = [
       },
     ],
     relatedBanks: ["caisse-depargne", "credit-mutuel", "credit-agricole"],
-    relatedProfiles: ["professionnel-independant", "primo-accedant", "fonctionnaire"],
+    relatedProfiles: ["profession-risque", "jeune-emprunteur", "fonctionnaire"],
   },
 
   // -----------------------------------------------------------------------
@@ -539,7 +539,7 @@ export const BANKS: BankData[] = [
       },
     ],
     relatedBanks: ["banque-populaire", "societe-generale", "credit-agricole"],
-    relatedProfiles: ["jeune-emprunteur", "professionnel-independant", "primo-accedant"],
+    relatedProfiles: ["jeune-emprunteur", "profession-risque", "risque-aggrave"],
   },
 ];
 
