@@ -29,7 +29,17 @@ export default function ProfilePageTemplate({
       {/* 2. Hero (sans disclaimer) */}
       <ProfileHero profile={profile} />
 
-      {/* 3. Calculator */}
+      {/* 3. Transition hero → calculateur */}
+      <div className="text-center py-8 md:py-10">
+        <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+          {profile.calculatorIntro}
+        </h2>
+        <p className="text-sm text-gray-500">
+          Résultat en 2 minutes · 100% gratuit · Sans engagement
+        </p>
+      </div>
+
+      {/* 4. Calculator */}
       <section className="bg-gray-50 pb-8 md:pb-12">
         <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
           <SavingsCalculator />

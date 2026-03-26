@@ -54,6 +54,8 @@ export interface ProfileData {
 
   faq: ProfileFAQ[];
 
+  calculatorIntro: string;
+
   relatedProfiles: string[];
   relatedBanks: string[];
 
@@ -126,6 +128,8 @@ export const PROFILES: ProfileData[] = [
 
     switchTips:
       "En tant que senior, demandez systématiquement à votre nouvel assureur les limites d'âge de couverture (pas seulement de souscription). Vérifiez aussi les conditions de maintien des garanties ITT/IPT après 65 ans — certains contrats les suppriment automatiquement à cet âge. Privilégiez les contrats qui maintiennent au minimum les garanties décès et PTIA sans limite d'âge.",
+
+    calculatorIntro: "Simulez votre économie en tant que senior",
 
     ctaTitle: "Senior : simulez votre économie en assurance emprunteur",
     ctaSubtitle: "Découvrez combien vous pouvez économiser après 60 ans. Simulation gratuite en 2\u00a0minutes.",
@@ -228,6 +232,8 @@ export const PROFILES: ProfileData[] = [
 
     switchTips:
       "Si vous avez un risque aggravé de santé, ne vous contentez pas d'un seul devis. Les grilles médicales varient énormément d'un assureur à l'autre — une pathologie qui entraîne une surprime de 200% chez l'un peut n'entraîner que 50% chez un autre. Faites au minimum 3 demandes. Et vérifiez si votre pathologie est couverte par le droit à l'oubli avant de remplir le questionnaire médical.",
+
+    calculatorIntro: "Estimez vos économies malgré un risque de santé",
 
     ctaTitle: "Risque aggravé : découvrez vos options en assurance emprunteur",
     ctaSubtitle: "Convention AERAS, droit à l'oubli, suppression du questionnaire : simulez votre économie.",
@@ -333,6 +339,8 @@ export const PROFILES: ProfileData[] = [
     switchTips:
       "Vérifiez précisément la liste des professions à risque chez chaque assureur — elle varie considérablement. Un pompier peut avoir une surprime de 100% chez un assureur et seulement 25% chez un autre. Demandez aussi si les activités sportives liées à votre profession (parachutisme pour les militaires, plongée pour les marins) sont couvertes ou exclues.",
 
+    calculatorIntro: "Calculez votre économie selon votre profession",
+
     ctaTitle: "Profession à risque : comparez les assurances emprunteur adaptées",
     ctaSubtitle: "Surprimes, exclusions, couvertures spécialisées : simulez votre économie en 2\u00a0minutes.",
 
@@ -432,6 +440,8 @@ export const PROFILES: ProfileData[] = [
 
     switchTips:
       "En tant que fonctionnaire, vous avez le profil idéal pour la délégation d'assurance. Demandez un devis en précisant votre statut (titulaire, contractuel, stagiaire) et votre maintien de salaire. Si vous êtes hospitalier (PH, infirmier), vérifiez la définition ITT — optez pour la définition 'professionnelle' (incapacité à exercer votre profession) plutôt que 'fonctionnelle'.",
+
+    calculatorIntro: "Simulez l'avantage fonctionnaire en assurance emprunteur",
 
     ctaTitle: "Fonctionnaire : profitez des meilleurs taux en assurance emprunteur",
     ctaSubtitle: "Votre statut vous avantage en délégation. Simulez votre économie gratuitement.",
@@ -537,6 +547,8 @@ export const PROFILES: ProfileData[] = [
     switchTips:
       "Pour un investissement locatif, négociez la réduction des garanties à décès + PTIA uniquement (pas d'ITT/IPT). Si votre banque refuse, demandez-le par écrit — dans la majorité des cas, c'est négociable. Et n'oubliez pas de déduire vos primes d'assurance de vos revenus fonciers ou BIC (LMNP réel).",
 
+    calculatorIntro: "Calculez l'économie sur votre prêt locatif",
+
     ctaTitle: "Investissement locatif : optimisez votre assurance emprunteur",
     ctaSubtitle: "Quotité, garanties réduites, déductibilité fiscale : simulez votre économie.",
 
@@ -637,6 +649,8 @@ export const PROFILES: ProfileData[] = [
 
     switchTips:
       "En tant qu'expatrié, précisez toujours votre pays de résidence dès le premier contact avec l'assureur. Certains pays entraînent un refus automatique — inutile de perdre du temps. Vérifiez aussi les conditions de rapatriement en cas de sinistre et la devise de remboursement (euros ou devise locale). Si vous prévoyez de revenir en France, certains contrats permettent un ajustement de tarif à votre retour.",
+
+    calculatorIntro: "Simulez votre économie depuis l'étranger",
 
     ctaTitle: "Expatrié : trouvez une assurance emprunteur adaptée",
     ctaSubtitle: "Couverture internationale, souscription à distance : simulez votre économie.",
@@ -742,6 +756,8 @@ export const PROFILES: ProfileData[] = [
     switchTips:
       "Si vous êtes éligible à la suppression du questionnaire médical, assurez-vous que l'assureur ne vous pose aucune question de santé — c'est interdit par la loi. Si un assureur vous demande de remplir un questionnaire alors que vous remplissez les conditions (< 200 000€ par tête, remboursé avant 60 ans), signalez-le et changez d'assureur. C'est une infraction à la loi Lemoine.",
 
+    calculatorIntro: "Simulez votre économie sans questionnaire de santé",
+
     ctaTitle: "Sans questionnaire médical : changez d'assurance emprunteur simplement",
     ctaSubtitle: "Éligible à la loi Lemoine ? Simulez votre économie sans déclarer votre santé.",
 
@@ -841,6 +857,8 @@ export const PROFILES: ProfileData[] = [
 
     switchTips:
       "En tant que jeune emprunteur, vous avez le profil idéal pour négocier. Demandez au minimum 3 devis et jouez la concurrence. Le changement est gratuit, immédiat, et l'économie est la plus importante de tous les profils. Si vous avez signé le contrat groupe il y a quelques mois, changez maintenant — chaque mois qui passe, c'est 30 à 50€ de trop.",
+
+    calculatorIntro: "Découvrez combien vous payez en trop entre 25 et 35 ans",
 
     ctaTitle: "25-35 ans : vous payez votre assurance emprunteur 3 à 4 fois trop cher",
     ctaSubtitle: "Taux dès 0,08% en délégation. Simulez votre économie en 2\u00a0minutes.",
