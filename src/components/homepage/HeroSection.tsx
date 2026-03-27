@@ -25,7 +25,9 @@ export default function HeroSection() {
             {/* 3. Sous-titre — 1-2 lignes explicatives */}
             <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-6 max-w-lg mx-auto md:mx-0">
               Comparez votre contrat groupe avec les meilleures offres en délégation.
-              Résultat en 2 minutes, 100% gratuit. Loi Lemoine : changez à tout moment, sans frais.
+              Résultat en 2 minutes, 100% gratuit.
+              <br />
+              Loi Lemoine : changez à tout moment, sans frais.
             </p>
 
             {/* 4. CTA — bouton visible dans le hero */}
