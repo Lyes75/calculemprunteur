@@ -9,11 +9,13 @@ export default function HeroSection() {
           {/* Texte — gauche en desktop, centré en mobile */}
           <div className="text-center md:text-left md:flex-1">
 
-            {/* 1. H1 — court et percutant, max 2 lignes en desktop */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight mb-3">
-              Assurance emprunteur :<br className="hidden md:inline" />
-              <span className="text-accent-600"> économisez jusqu&apos;à 15&nbsp;000€</span>
+            {/* 1. H1 — "Changement" pour le SEO, taille réduite pour le 50/50 */}
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight mb-3">
+              Changement d&apos;assurance emprunteur
             </h1>
+            <p className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-accent-600 tracking-tight leading-tight mb-4">
+              Économisez jusqu&apos;à 15&nbsp;000€*
+            </p>
 
             {/* 2. Slogan — phrase signature du site */}
             <p className="text-lg md:text-xl font-semibold text-primary-900 mb-4">
