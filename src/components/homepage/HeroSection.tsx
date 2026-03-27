@@ -13,7 +13,7 @@ export default function HeroSection() {
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight mb-3 whitespace-nowrap">
               Changement d&apos;Assurance Emprunteur
             </h1>
-            <p className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-accent-600 tracking-tight leading-tight mb-4">
+            <p className="text-lg md:text-xl lg:text-2xl font-semibold text-accent-600 tracking-tight leading-tight mb-4">
               Comparez et changez en 2 minutes
             </p>
 
