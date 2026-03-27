@@ -16,14 +16,14 @@ export default function HeroSection() {
             </p>
           </div>
 
-          {/* Illustration — visible uniquement en desktop */}
-          <div className="hidden md:flex md:flex-1 md:justify-center md:items-center">
+          {/* Illustration — mobile (au-dessus du texte via order) + desktop */}
+          <div className="flex justify-center items-center order-first md:order-none md:flex-1">
             <Image
               src="/images/hero-illustration.png"
               alt="Simulation d'économies en assurance emprunteur — graphique de réduction des coûts"
               width={500}
               height={300}
-              className="w-full max-w-md lg:max-w-lg object-contain"
+              className="w-full max-w-[220px] md:max-w-md lg:max-w-lg object-contain"
               priority={true}
             />
           </div>
