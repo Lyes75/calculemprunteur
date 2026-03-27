@@ -14,7 +14,7 @@ export default function HeroSection() {
               Changement d&apos;Assurance Emprunteur
             </h1>
             <p className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-accent-600 tracking-tight leading-tight mb-4">
-              Économisez jusqu&apos;à 15&nbsp;000€*
+              Comparez et changez en 2 minutes
             </p>
 
             {/* 2. Slogan — phrase signature du site */}
