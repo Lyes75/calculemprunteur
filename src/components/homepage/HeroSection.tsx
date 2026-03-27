@@ -10,7 +10,7 @@ export default function HeroSection() {
           <div className="text-center md:text-left md:flex-1">
 
             {/* 1. H1 — "Changement" pour le SEO, taille réduite pour le 50/50 */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight mb-3">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight mb-3 whitespace-nowrap">
               Changement d&apos;Assurance Emprunteur
             </h1>
             <p className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-accent-600 tracking-tight leading-tight mb-4">
