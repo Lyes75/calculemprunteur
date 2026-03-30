@@ -12,13 +12,8 @@ export const metadata: Metadata = {
     "Changement d'assurance emprunteur : simulez gratuitement vos économies en changeant d'assurance de prêt immobilier (loi Lemoine). Comparez les taux par banque et recevez 3 devis personnalisés sans engagement.",
   metadataBase: new URL("https://www.calculemprunteur.fr"),
   openGraph: {
-    title:
-      "Changement d'Assurance Emprunteur | Simulez vos Économies",
-    description:
-      "Changement d'assurance emprunteur : simulez gratuitement vos économies en changeant d'assurance de prêt immobilier (loi Lemoine). Comparez les taux par banque et recevez 3 devis personnalisés sans engagement.",
     type: "website",
     locale: "fr_FR",
-    url: "https://www.calculemprunteur.fr",
     siteName: "CalculEmprunteur.fr",
   },
   robots: {

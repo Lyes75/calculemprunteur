@@ -18,11 +18,21 @@ export async function generateMetadata({
   const insurer = INSURERS.find((i) => i.slug === slug);
   if (!insurer) return {};
 
+  const url = `https://www.calculemprunteur.fr/avis-${insurer.slug}-assurance-emprunteur`;
+
   return {
     title: insurer.metaTitle,
     description: insurer.metaDescription,
-    alternates: {
-      canonical: `https://www.calculemprunteur.fr/avis-${insurer.slug}-assurance-emprunteur`,
+    alternates: { canonical: url },
+    openGraph: {
+      title: insurer.metaTitle,
+      description: insurer.metaDescription,
+      url,
+    },
+    twitter: {
+      card: "summary" as const,
+      title: insurer.metaTitle,
+      description: insurer.metaDescription,
     },
   };
 }

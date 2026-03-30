@@ -20,22 +20,40 @@ export async function generateMetadata({
 
   const bank = BANKS.find((b) => b.slug === banque);
   if (bank) {
+    const url = `https://www.calculemprunteur.fr/assurance-emprunteur-${bank.slug}`;
     return {
       title: bank.metaTitle,
       description: bank.metaDescription,
-      alternates: {
-        canonical: `https://www.calculemprunteur.fr/assurance-emprunteur-${bank.slug}`,
+      alternates: { canonical: url },
+      openGraph: {
+        title: bank.metaTitle,
+        description: bank.metaDescription,
+        url,
+      },
+      twitter: {
+        card: "summary" as const,
+        title: bank.metaTitle,
+        description: bank.metaDescription,
       },
     };
   }
 
   const profile = PROFILES.find((p) => p.slug === banque);
   if (profile) {
+    const url = `https://www.calculemprunteur.fr/assurance-emprunteur-${profile.slug}`;
     return {
       title: profile.metaTitle,
       description: profile.metaDescription,
-      alternates: {
-        canonical: `https://www.calculemprunteur.fr/assurance-emprunteur-${profile.slug}`,
+      alternates: { canonical: url },
+      openGraph: {
+        title: profile.metaTitle,
+        description: profile.metaDescription,
+        url,
+      },
+      twitter: {
+        card: "summary" as const,
+        title: profile.metaTitle,
+        description: profile.metaDescription,
       },
     };
   }
