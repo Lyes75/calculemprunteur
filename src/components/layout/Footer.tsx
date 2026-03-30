@@ -1,11 +1,12 @@
 import Image from "next/image";
 
 const COL2_LINKS = [
-  { label: "Simulateur", href: "#simulateur" },
-  { label: "Loi Lemoine", href: "#loi-lemoine" },
-  { label: "Loi Hamon", href: "/#loi-lemoine" },
-  { label: "Convention AERAS", href: "/#faq" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Simulateur", href: "/#simulateur" },
+  { label: "Loi Lemoine", href: "/guide/loi-lemoine" },
+  { label: "Loi Hamon vs Lemoine", href: "/guide/loi-hamon-vs-lemoine" },
+  { label: "Convention AERAS", href: "/guide/convention-aeras" },
+  { label: "Délégation d'assurance", href: "/guide/delegation-assurance" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 const COL3_LINKS = [

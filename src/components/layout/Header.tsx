@@ -6,7 +6,7 @@ import Image from "next/image";
 const NAV_LINKS = [
   { label: "Simulateur", href: "#simulateur" },
   { label: "Comment ça marche", href: "#comment-ca-marche" },
-  { label: "Loi Lemoine", href: "#loi-lemoine" },
+  { label: "Loi Lemoine", href: "/guide/loi-lemoine" },
   { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "/contact" },
 ];
