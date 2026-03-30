@@ -1,7 +1,52 @@
-import type { GuideData } from "@/data/guides";
+import type { GuideData, ExternalLink } from "@/data/guides";
+import React from "react";
 
 interface GuideContentProps {
   guide: GuideData;
+}
+
+function renderParagraphWithLinks(text: string, links?: ExternalLink[]) {
+  if (!links || links.length === 0) {
+    return <>{text}</>;
+  }
+
+  const parts: (string | React.ReactNode)[] = [];
+  let remaining = text;
+  let keyIdx = 0;
+
+  // Sort links by position in text (first occurrence first)
+  const sortedLinks = [...links].sort((a, b) => {
+    const posA = remaining.indexOf(a.text);
+    const posB = remaining.indexOf(b.text);
+    return posA - posB;
+  });
+
+  for (const link of sortedLinks) {
+    const idx = remaining.indexOf(link.text);
+    if (idx === -1) continue;
+
+    if (idx > 0) {
+      parts.push(remaining.substring(0, idx));
+    }
+    parts.push(
+      <a
+        key={keyIdx++}
+        href={link.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-accent-600 hover:text-accent-500 underline"
+      >
+        {link.text}
+      </a>
+    );
+    remaining = remaining.substring(idx + link.text.length);
+  }
+
+  if (remaining) {
+    parts.push(remaining);
+  }
+
+  return <>{parts}</>;
 }
 
 export default function GuideContent({ guide }: GuideContentProps) {
@@ -45,7 +90,7 @@ export default function GuideContent({ guide }: GuideContentProps) {
                   key={j}
                   className="text-base text-gray-700 leading-relaxed"
                 >
-                  {paragraph}
+                  {renderParagraphWithLinks(paragraph, section.links)}
                 </p>
               ))}
             </div>
