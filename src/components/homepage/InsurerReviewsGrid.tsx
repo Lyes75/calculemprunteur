@@ -194,10 +194,10 @@ export default function InsurerReviewsGrid() {
               </ul>
 
               <a
-                href="#simulateur"
+                href={`/avis-${insurer.slug}-assurance-emprunteur`}
                 className="text-sm text-accent-600 hover:text-accent-500 font-medium transition-colors"
               >
-                Simuler mon économie →
+                Lire notre avis complet &rarr;
               </a>
             </div>
           ))}

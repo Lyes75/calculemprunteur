@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
         source: "/assurance-emprunteur-:banque",
         destination: "/assurance-emprunteur/:banque",
       },
+      {
+        source: "/avis-:slug-assurance-emprunteur",
+        destination: "/avis-assurance-emprunteur/:slug",
+      },
     ];
   },
 };
