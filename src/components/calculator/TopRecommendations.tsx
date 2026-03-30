@@ -6,6 +6,7 @@ import { getTop3, ScoredInsurer } from "./recommendationEngine";
 import { formatEuro, formatPercent } from "./utils";
 import { BANK_DATA } from "./constants";
 import RecommendationCard from "./RecommendationCard";
+import { getMagnoliaLink } from "@/utils/affiliateLinks";
 
 interface TopRecommendationsProps {
   capital: number;
@@ -151,9 +152,44 @@ Rédige les 3 paragraphes personnalisés.`;
         </div>
       )}
 
-      <p className="text-xs text-gray-400 text-center max-w-md mx-auto">
-        * Estimations indicatives basées sur les taux moyens. Le tarif exact dépend de
-        votre profil. Cliquez sur &laquo;&nbsp;Demander un devis&nbsp;&raquo; pour obtenir un tarif personnalisé.
+      {/* CTA unique sous les 3 cards */}
+      <div className="text-center mt-6">
+        <a
+          href={getMagnoliaLink('top3')}
+          target="_blank"
+          rel="noopener noreferrer sponsored"
+          onClick={() => {
+            try {
+              fetch("/api/track-click", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  insurer_slug: "magnolia",
+                  insurer_name: "Magnolia",
+                  affiliate_url: getMagnoliaLink('top3'),
+                  affiliate_platform: "magnolia",
+                  source_component: "top3_cta",
+                  source_page: window.location.pathname,
+                }),
+              }).catch(() => {});
+            } catch {
+              // Ne jamais bloquer la navigation
+            }
+          }}
+          className="inline-flex items-center justify-center gap-2 bg-accent-600 hover:bg-accent-500 text-white font-semibold px-8 py-4 rounded-full text-base transition-colors shadow-lg shadow-accent-600/20"
+        >
+          Comparer ces offres sur Magnolia.fr
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+        <p className="text-xs text-gray-400 mt-3 max-w-md mx-auto">
+          Comparaison réalisée via notre partenaire Magnolia.fr, courtier indépendant couvrant 28 contrats d&apos;assurance emprunteur.
+        </p>
+      </div>
+
+      <p className="text-xs text-gray-400 text-center max-w-md mx-auto mt-4">
+        * Estimations indicatives basées sur les taux moyens. Le tarif exact dépend de votre profil.
       </p>
 
       <div className="mt-4 text-center text-sm text-gray-500">

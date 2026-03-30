@@ -100,40 +100,7 @@ export default function RecommendationCard({
         )}
       </div>
 
-      {/* CTA */}
-      <a
-        href={insurer.affiliateUrl}
-        target="_blank"
-        rel="noopener nofollow"
-        onClick={() => {
-          try {
-            fetch("/api/track-click", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({
-                insurer_slug: insurer.id,
-                insurer_name: insurer.name,
-                affiliate_url: insurer.affiliateUrl,
-                affiliate_platform: insurer.affiliatePlatform,
-                source_component: `top3_rank${rank + 1}`,
-                source_page: window.location.pathname,
-              }),
-            }).catch(() => {});
-          } catch {
-            // Ne jamais bloquer la navigation
-          }
-        }}
-        className={`
-          block text-center w-full font-semibold rounded-xl px-6 py-3 text-sm transition-all duration-200
-          active:scale-[0.98] cursor-pointer
-          ${isFirst
-            ? "bg-accent-600 hover:bg-accent-500 text-white shadow-md hover:shadow-lg"
-            : "bg-primary-800 hover:bg-primary-700 text-white"
-          }
-        `}
-      >
-        Demander un devis {insurer.name} →
-      </a>
+      {/* Pas de bouton individuel — un seul CTA sous les 3 cards (TopRecommendations) */}
     </div>
   );
 }
