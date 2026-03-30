@@ -36,6 +36,38 @@ export default function InsurerPageTemplate({
       {/* Vs Group */}
       <InsurerVsGroup insurer={insurer} />
 
+      {/* Simulator link */}
+      <section className="py-12 bg-gray-50">
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">
+            Simulez votre &eacute;conomie avec {insurer.name}
+          </h2>
+          <p className="text-gray-600 mb-6">
+            Comparez votre contrat actuel avec les taux {insurer.name} en
+            2&nbsp;minutes. R&eacute;sultat imm&eacute;diat, 100% gratuit.
+          </p>
+          <a
+            href="/#simulateur"
+            className="inline-flex items-center justify-center gap-2 bg-primary-900 hover:bg-primary-800 text-white font-semibold px-8 py-4 rounded-full text-base transition-colors"
+          >
+            Simuler mon &eacute;conomie
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M13 7l5 5m0 0l-5 5m5-5H6"
+              />
+            </svg>
+          </a>
+        </div>
+      </section>
+
       {/* CTA Magnolia */}
       <InsurerCTA insurer={insurer} />
 

@@ -35,6 +35,16 @@ export interface InsurerData {
   vsGroupRate: string;
   vsGroupSavings: string;
   vsGroupText: string;
+  vsGroupComparison: {
+    scenario: string;
+    groupRate: string;
+    groupMonthly: string;
+    groupTotal: string;
+    insurerRate: string;
+    insurerMonthly: string;
+    insurerTotal: string;
+    savings: string;
+  };
 
   faq: Array<{ question: string; answer: string }>;
 
@@ -159,6 +169,16 @@ export const INSURERS: InsurerData[] = [
     vsGroupSavings: "8 000 \u00e0 15 000\u20ac",
     vsGroupText:
       "En moyenne, un emprunteur de 30-40 ans qui passe du contrat groupe de sa banque \u00e0 April \u00e9conomise entre 8 000 et 15 000\u20ac sur la dur\u00e9e totale de son pr\u00eat. Le taux passe de 0,38-0,46% (groupe) \u00e0 0,08-0,15% (April), soit une division par 3 \u00e0 4. Les garanties sont \u00e9quivalentes voire sup\u00e9rieures. April propose la d\u00e9finition ITT professionnelle que la plupart des contrats groupe n'incluent pas.",
+    vsGroupComparison: {
+      scenario: "Emprunteur 35 ans, non-fumeur, prêt de 200 000€ sur 20 ans",
+      groupRate: "0,42%",
+      groupMonthly: "70€",
+      groupTotal: "16 800€",
+      insurerRate: "0,12%",
+      insurerMonthly: "20€",
+      insurerTotal: "4 800€",
+      savings: "12 000€",
+    },
 
     faq: [
       {
@@ -317,6 +337,16 @@ export const INSURERS: InsurerData[] = [
     vsGroupSavings: "10 000 \u00e0 18 000\u20ac",
     vsGroupText:
       "Le contrat groupe Cardif est l'un des plus chers du march\u00e9. Un emprunteur BNP de 30 ans qui passe en d\u00e9l\u00e9gation \u00e9conomise en moyenne 10 000 \u00e0 18 000\u20ac sur un pr\u00eat de 200 000\u20ac sur 20 ans. Ironie : Cardif Libert\u00e9 (le contrat en d\u00e9l\u00e9gation de Cardif) est 3 fois moins cher que le contrat groupe Cardif.",
+    vsGroupComparison: {
+      scenario: "Emprunteur BNP 35 ans, non-fumeur, prêt de 200 000€ sur 20 ans",
+      groupRate: "0,45%",
+      groupMonthly: "75€",
+      groupTotal: "18 000€",
+      insurerRate: "0,11%",
+      insurerMonthly: "18€",
+      insurerTotal: "4 400€",
+      savings: "13 600€",
+    },
 
     faq: [
       {
@@ -470,6 +500,16 @@ export const INSURERS: InsurerData[] = [
     vsGroupSavings: "8 000 \u00e0 14 000\u20ac",
     vsGroupText:
       "Les emprunteurs Caisse d'\u00c9pargne et Banque Postale qui passent en d\u00e9l\u00e9gation \u00e9conomisent en moyenne 8 000 \u00e0 14 000\u20ac sur un pr\u00eat de 200 000\u20ac sur 20 ans. L'\u00e9cart est particuli\u00e8rement important pour les moins de 40 ans non-fumeurs.",
+    vsGroupComparison: {
+      scenario: "Emprunteur Caisse d'Épargne 35 ans, non-fumeur, prêt de 200 000€ sur 20 ans",
+      groupRate: "0,44%",
+      groupMonthly: "73€",
+      groupTotal: "17 600€",
+      insurerRate: "0,12%",
+      insurerMonthly: "20€",
+      insurerTotal: "4 800€",
+      savings: "12 800€",
+    },
 
     faq: [
       {
@@ -623,6 +663,16 @@ export const INSURERS: InsurerData[] = [
     vsGroupSavings: "7 000 \u00e0 14 000\u20ac",
     vsGroupText:
       "Par rapport aux contrats groupe bancaires, Generali permet une \u00e9conomie de 7 000 \u00e0 14 000\u20ac sur un pr\u00eat standard. L'avantage est particuli\u00e8rement net pour les 45-60 ans o\u00f9 Generali combine un taux comp\u00e9titif avec une acceptation que peu d'assureurs offrent.",
+    vsGroupComparison: {
+      scenario: "Emprunteur 35 ans, non-fumeur, prêt de 200 000€ sur 20 ans",
+      groupRate: "0,42%",
+      groupMonthly: "70€",
+      groupTotal: "16 800€",
+      insurerRate: "0,13%",
+      insurerMonthly: "22€",
+      insurerTotal: "5 280€",
+      savings: "11 520€",
+    },
 
     faq: [
       {
@@ -774,6 +824,16 @@ export const INSURERS: InsurerData[] = [
     vsGroupSavings: "4 000 \u00e0 10 000\u20ac",
     vsGroupText:
       "Par rapport aux contrats groupe bancaires, la Macif permet une \u00e9conomie de 4 000 \u00e0 10 000\u20ac. C'est moins que les pure players en d\u00e9l\u00e9gation (8 000 \u00e0 15 000\u20ac avec April ou Generali) mais avec un service client et un accompagnement sup\u00e9rieurs.",
+    vsGroupComparison: {
+      scenario: "Emprunteur 35 ans, non-fumeur, prêt de 200 000€ sur 20 ans",
+      groupRate: "0,42%",
+      groupMonthly: "70€",
+      groupTotal: "16 800€",
+      insurerRate: "0,20%",
+      insurerMonthly: "33€",
+      insurerTotal: "7 920€",
+      savings: "8 880€",
+    },
 
     faq: [
       {
@@ -929,6 +989,16 @@ export const INSURERS: InsurerData[] = [
     vsGroupSavings: "5 000 \u00e0 12 000\u20ac",
     vsGroupText:
       "Pour les profils jeunes, l'\u00e9conomie vs le contrat groupe est de 5 000 \u00e0 12 000\u20ac, moins qu'April car le taux de base est un peu plus \u00e9lev\u00e9. Mais pour les 55+ ans, SwissLife devient souvent le meilleur choix car les contrats groupe montent \u00e0 0,80-1,20% tandis que SwissLife reste \u00e0 0,33-0,50%.",
+    vsGroupComparison: {
+      scenario: "Emprunteur 55 ans, non-fumeur, prêt de 150 000€ sur 15 ans",
+      groupRate: "0,80%",
+      groupMonthly: "100€",
+      groupTotal: "18 000€",
+      insurerRate: "0,33%",
+      insurerMonthly: "41€",
+      insurerTotal: "7 425€",
+      savings: "10 575€",
+    },
 
     faq: [
       {

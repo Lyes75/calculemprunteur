@@ -11,7 +11,7 @@ function Stars({ count }: { count: number }) {
       {[1, 2, 3, 4, 5].map((i) => (
         <svg
           key={i}
-          className={`w-5 h-5 ${i <= count ? "text-warning-500" : "text-gray-300"}`}
+          className={`w-5 h-5 ${i <= count ? "text-yellow-400" : "text-gray-300"}`}
           fill="currentColor"
           viewBox="0 0 20 20"
         >
