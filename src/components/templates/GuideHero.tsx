@@ -8,6 +8,35 @@ export default function GuideHero({ guide }: GuideHeroProps) {
   return (
     <section className="bg-gradient-to-b from-primary-50 to-white py-16 md:py-20">
       <div className="max-w-3xl mx-auto px-4 md:px-6 lg:px-8">
+        {/* Breadcrumb */}
+        <nav className="text-sm text-gray-500 mb-6" aria-label="Fil d'Ariane">
+          <ol className="flex flex-wrap items-center gap-1">
+            <li>
+              <a
+                href="/"
+                className="hover:text-accent-600 transition-colors"
+              >
+                Accueil
+              </a>
+            </li>
+            <li className="text-gray-400">/</li>
+            <li>
+              <a
+                href="/#guides"
+                className="hover:text-accent-600 transition-colors"
+              >
+                Guides
+              </a>
+            </li>
+            <li className="text-gray-400">/</li>
+            <li className="text-gray-700 font-medium">
+              {guide.heroTitle.includes(":")
+                ? guide.heroTitle.split(":")[0].trim()
+                : guide.heroTitle}
+            </li>
+          </ol>
+        </nav>
+
         <div className="flex items-center gap-3 mb-6">
           <span className="inline-flex items-center gap-1.5 text-xs font-medium text-primary-700 bg-primary-100 px-3 py-1 rounded-full">
             <svg

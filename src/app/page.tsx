@@ -162,7 +162,104 @@ export default function HomePage() {
       {/* 11 — FAQ enrichie */}
       <FAQ />
 
-      {/* 12 — CTA final */}
+      {/* 12 — Nos guides */}
+      <section id="guides" className="bg-white py-16 md:py-20">
+        <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <div className="w-10 h-1 bg-accent-600 mx-auto mb-4 rounded-full" />
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+              Nos guides assurance emprunteur
+            </h2>
+            <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
+              Tout ce que vous devez savoir pour changer d&apos;assurance
+              emprunteur en toute confiance.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              {
+                href: "/guide/loi-lemoine",
+                title: "Loi Lemoine",
+                desc: "Changez \u00e0 tout moment, sans frais",
+              },
+              {
+                href: "/guide/delegation-assurance",
+                title: "D\u00e9l\u00e9gation d\u2019assurance",
+                desc: "Choisir un assureur externe \u00e0 votre banque",
+              },
+              {
+                href: "/guide/taux-assurance-emprunteur",
+                title: "Taux assurance emprunteur",
+                desc: "Bar\u00e8me 2026 par \u00e2ge et profil",
+              },
+              {
+                href: "/guide/lettre-resiliation",
+                title: "Lettre de r\u00e9siliation",
+                desc: "Mod\u00e8le gratuit conforme loi Lemoine",
+              },
+              {
+                href: "/guide/questionnaire-medical",
+                title: "Questionnaire m\u00e9dical",
+                desc: "Quand il est supprim\u00e9, quoi d\u00e9clarer",
+              },
+              {
+                href: "/guide/convention-aeras",
+                title: "Convention AERAS",
+                desc: "Emprunter avec un risque aggrav\u00e9 de sant\u00e9",
+              },
+              {
+                href: "/guide/equivalence-garanties",
+                title: "\u00c9quivalence de garanties",
+                desc: "Les 18 crit\u00e8res CCSF expliqu\u00e9s",
+              },
+              {
+                href: "/guide/cout-assurance-emprunteur",
+                title: "Co\u00fbt assurance emprunteur",
+                desc: "Combien \u00e7a co\u00fbte vraiment, exemples chiffr\u00e9s",
+              },
+              {
+                href: "/guide/refus-banque",
+                title: "Refus de la banque",
+                desc: "Vos recours en cas de refus abusif",
+              },
+              {
+                href: "/guide/loi-hamon-vs-lemoine",
+                title: "Loi Hamon vs Lemoine",
+                desc: "Ce qui a chang\u00e9 depuis 2022",
+              },
+            ].map((guide) => (
+              <a
+                key={guide.href}
+                href={guide.href}
+                className="flex items-start gap-3 bg-gray-50 hover:bg-primary-50 rounded-xl border border-gray-200 hover:border-primary-200 p-5 transition-all duration-200 group"
+              >
+                <svg
+                  className="w-5 h-5 text-accent-600 shrink-0 mt-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                  />
+                </svg>
+                <div>
+                  <p className="text-sm font-semibold text-gray-900 group-hover:text-primary-900">
+                    {guide.title}
+                  </p>
+                  <p className="text-xs text-gray-500 mt-1">{guide.desc}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 13 — CTA final */}
       <section className="bg-primary-900 py-16 md:py-20">
         <div className="max-w-3xl mx-auto px-4 md:px-6 lg:px-8 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
